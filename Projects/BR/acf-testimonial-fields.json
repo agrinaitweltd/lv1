@@ -1,0 +1,63 @@
+{
+  "key": "group_breezyee_testimonials",
+  "title": "Testimonial Details",
+  "fields": [
+    {
+      "key": "field_customer_name",
+      "label": "Customer Name",
+      "name": "customer_name",
+      "type": "text",
+      "required": 1
+    },
+    {
+      "key": "field_customer_location",
+      "label": "Customer Location",
+      "name": "customer_location",
+      "type": "text",
+      "required": 1,
+      "default_value": "London"
+    },
+    {
+      "key": "field_rating",
+      "label": "Rating",
+      "name": "rating",
+      "type": "number",
+      "required": 1,
+      "min": 1,
+      "max": 5,
+      "default_value": 5
+    },
+    {
+      "key": "field_testimonial_text",
+      "label": "Testimonial Text",
+      "name": "testimonial_text",
+      "type": "textarea",
+      "required": 1,
+      "rows": 4
+    },
+    {
+      "key": "field_service_used",
+      "label": "Service Used",
+      "name": "service_used",
+      "type": "select",
+      "choices": {
+        "house-removal": "House Removal",
+        "office-removal": "Office Removal",
+        "packing": "Packing Service",
+        "storage": "Storage",
+        "breezer": "Breezer Service",
+        "other": "Other"
+      },
+      "default_value": "house-removal"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "testimonial"
+      }
+    ]
+  ]
+}

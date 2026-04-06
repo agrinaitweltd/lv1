@@ -1,0 +1,6 @@
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2JyZWV6eWVlbW92ZXMuY28udWsiLCJpYXQiOjE3NTIzNjgxNDUsIm5iZiI6MTc1MjM2ODE0NSwiZXhwIjoxNzUyOTcyOTQ1LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.jusC61Ykr24EUBSnud4N__N5xYQ9EHsr7khZ-c4hUpo",
+  "user_email": "ashirsabir876@gmail.com",
+  "user_nicename": "ashirsabir876gmail-com",
+  "user_display_name": "ashirsabir876@gmail.com"
+}
