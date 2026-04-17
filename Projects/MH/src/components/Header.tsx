@@ -132,8 +132,8 @@ export default function Header({ currentPath = "/" }: { currentPath?: string }) 
           </div>
         )}
 
-        {/* CTA — always visible on desktop */}
-        <Link href="/book-now" className="nav-cta">BOOK NOW &rarr;</Link>
+        {/* CTA — only visible before scroll */}
+        {!scrolled && <Link href="/book-now" className="nav-cta">BOOK NOW &rarr;</Link>}
 
         {/* Scrolled state: MENU button */}
         {scrolled && (

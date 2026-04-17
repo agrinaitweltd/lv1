@@ -575,6 +575,7 @@ button, input, textarea, select { font-family: inherit; }
   margin-left: min(5.6rem, 7vw);
   max-width: 900px;
   padding: 10.5rem 0 5rem;
+  animation: fadeInUp 0.8s cubic-bezier(.2,.8,.3,1) both;
 }
 .hero-headline {
   display: flex;
@@ -585,15 +586,38 @@ button, input, textarea, select { font-family: inherit; }
   letter-spacing: -0.01em;
   text-transform: uppercase;
   margin: 0.55rem 0 1.5rem;
+  color: #ffffff;
+}
+.hero-headline span {
+  color: #ffffff;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  animation: revealUp 0.75s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-headline span:nth-child(1) { animation-delay: 80ms; }
+.hero-headline span:nth-child(2) { animation-delay: 180ms; }
+.hero-headline span:nth-child(3) { animation-delay: 280ms; }
+.hero .accent-word {
+  color: #ffffff;
+  background: linear-gradient(120deg, #ffffff 0%, #f1f7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-sub {
   font-size: 0.9rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(190, 210, 242, 0.75);
+  color: rgba(237, 243, 255, 0.92);
   margin-bottom: 2rem;
+  animation: fadeInUp 0.7s cubic-bezier(.2,.8,.3,1) 360ms both;
 }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.hero .eyebrow { color: #ffffff; animation: fadeInUp 0.65s cubic-bezier(.2,.8,.3,1) both; }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fadeInUp 0.7s cubic-bezier(.2,.8,.3,1) 440ms both;
+}
 
 .trust-strip {
   background: #070d18;
@@ -710,12 +734,16 @@ button, input, textarea, select { font-family: inherit; }
   animation: overlayFade 0.55s ease both;
 }
 .services-layout { position: relative; z-index: 1; }
-.services-header { margin-bottom: 2.3rem; }
+.services-header {
+  margin-bottom: 2.3rem;
+  animation: fadeInUp 0.7s cubic-bezier(.2,.8,.3,1) both;
+}
 .services-header h2 {
-  color: var(--text);
+  color: #ffffff;
   font-size: clamp(1.8rem, 3.4vw, 3.4rem);
   font-weight: 900;
   text-transform: uppercase;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.42);
 }
 .services-body {
   display: grid;
@@ -723,6 +751,7 @@ button, input, textarea, select { font-family: inherit; }
   border: 1px solid rgba(97, 221, 217, 0.22);
   border-radius: var(--r-card);
   overflow: hidden;
+  animation: revealUp 0.75s cubic-bezier(.2,.7,.2,1) 120ms both;
 }
 .services-nav {
   display: flex;
@@ -756,6 +785,7 @@ button, input, textarea, select { font-family: inherit; }
 .service-panel {
   padding: 2rem 2.3rem;
   background: rgba(6, 12, 24, 0.72);
+  animation: fadeInUp 0.45s cubic-bezier(.2,.8,.3,1) both;
 }
 .service-panel-top { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
 .service-panel-price {
@@ -782,7 +812,11 @@ button, input, textarea, select { font-family: inherit; }
   letter-spacing: 0.03em;
   margin-bottom: 0.65rem;
 }
-.service-desc { color: var(--text-soft); max-width: 530px; margin-bottom: 1.1rem; }
+.service-desc {
+  color: #edf3ff;
+  max-width: 530px;
+  margin-bottom: 1.1rem;
+}
 .service-points {
   list-style: none;
   margin: 0 0 1.4rem;
@@ -811,8 +845,9 @@ button, input, textarea, select { font-family: inherit; }
   position: relative;
   z-index: 1;
   margin-top: 1.2rem;
-  color: var(--text-soft);
+  color: #ffffff;
   font-size: 0.86rem;
+  animation: fadeInUp 0.75s cubic-bezier(.2,.8,.3,1) 220ms both;
 }
 
 .process-home { background: #0a1322; }

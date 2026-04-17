@@ -211,7 +211,7 @@ export default function Home() {
                 </button>
               ))}
             </nav>
-            <div className="service-panel">
+            <div className="service-panel" key={activeService}>
               <div className="service-panel-top">
                 <span className="service-panel-price">{active.price}</span>
                 {active.tag && <span className="service-tag">{active.tag}</span>}
