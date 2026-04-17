@@ -2282,30 +2282,146 @@ button, input, textarea, select { font-family: inherit; }
 }
 .footer-copyright a:hover { color: #c0392b; }
 
-/* ─── Tablet overrides for new layout ─── */
-@media (max-width: 1000px) {
-  .footer-main { grid-template-columns: 1fr 1fr !important; gap: 2.5rem !important; }
-  .footer-brand-col { grid-column: span 2; }
+/* ─── Footer: inline contact items ─── */
+.footer-touch-inline {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  border: none !important;
+  padding: 0 !important;
+  animation: none !important;
+  flex-direction: row !important;
+}
+.footer-touch-label {
+  color: rgba(220, 235, 255, 0.88);
+  font-size: 0.93rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.footer-touch-value {
+  color: #c0392b;
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-touch-value:hover { color: #e84545; }
+
+/* ─── Footer: social + wordmark on same row ─── */
+.footer-brand-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.footer-social-btn--yt {
+  border-radius: 10px !important;
+}
+.footer-social-btn--ig {
+  border-radius: 50% !important;
+}
+.footer-brand-bottom-row .footer-wordmark {
+  margin: 0;
+  font-size: 1.3rem;
 }
 
-/* ─── Mobile overrides for new layout ─── */
+/* ─── Contact form: expanded fields ─── */
+.form-field-group {
+  display: grid;
+  gap: 0.55rem;
+}
+.form-group-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin: 0;
+}
+.form-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 1.2rem;
+}
+.form-check-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #384861;
+  cursor: pointer;
+}
+.form-check-input {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  accent-color: #c0392b;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.form-file {
+  padding: 0.55rem 0.6rem !important;
+  font-size: 0.84rem !important;
+  cursor: pointer;
+  background: #eef2f7 !important;
+  border-radius: 8px !important;
+}
+
+/* ─── Send button: rust red ─── */
+.btn-send-rust {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--r-btn);
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #b52a2a;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+  box-shadow: 0 6px 20px rgba(181, 42, 42, 0.32);
+}
+.btn-send-rust:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(181, 42, 42, 0.48);
+  filter: brightness(1.07);
+}
+
+/* ─── Mobile footer: spacing overrides for new structure ─── */
 @media (max-width: 768px) {
+  .footer-touch-col,
+  .footer-services-col {
+    padding-bottom: 2rem !important;
+    border-bottom: 1px solid rgba(180, 40, 40, 0.15) !important;
+  }
+  .footer-brand-col {
+    padding-top: 2rem !important;
+    border-bottom: none !important;
+  }
+  .footer-brand-bottom-row {
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .footer-touch-list { gap: 0.72rem; }
+  .footer-touch-spacer { height: 0.4rem; display: block; }
+  .form-checkboxes { grid-template-columns: 1fr; gap: 0.5rem; }
   .hero-brands { display: none; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
   .footer-main {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
     padding: 2.4rem 0 1.6rem !important;
-  }
-  .footer-touch-col,
-  .footer-services-col {
-    padding-bottom: 1.6rem;
-    border-bottom: 1px solid rgba(180, 40, 40, 0.15);
-    margin-bottom: 0;
-  }
-  .footer-brand-col {
-    grid-column: auto !important;
-    padding-top: 1.6rem;
   }
 }
 @media (max-width: 500px) {
