@@ -9,26 +9,14 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Get In Touch</h4>
           <ul>
-            <li>
-              <strong>Phone</strong>
-              <a href="tel:07440771820">07440 771820</a>
-            </li>
-            <li>
-              <strong>Email</strong>
-              <a href="mailto:mhdetailz6@gmail.com">mhdetailz6@gmail.com</a>
-            </li>
-            <li>
-              <strong>Availability</strong>
-              Weekends Only
-            </li>
-            <li>
-              <strong>Hours</strong>
-              11:00 AM &ndash; 6:00 PM
-            </li>
+            <li>Phone &nbsp;<a href="tel:07440771820">07440 771820</a></li>
+            <li>Email &nbsp;<a href="mailto:mhdetailz6@gmail.com">mhdetailz6@gmail.com</a></li>
+            <li style={{ color: "rgba(214,226,248,0.8)" }}>Appointments &nbsp;<span style={{ color: "var(--accent)" }}>Weekends Only</span></li>
+            <li style={{ color: "rgba(214,226,248,0.8)" }}>Hours &nbsp;<span style={{ color: "var(--accent)" }}>11:00 AM &ndash; 6:00 PM</span></li>
           </ul>
         </div>
 
-        <div className="footer-brand">
+        <div className="footer-col footer-brand">
           <div className="footer-socials">
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
@@ -44,13 +32,13 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-          <h4>Services</h4>
+          <h4>MH Services</h4>
           <ul>
-            <li><Link href="/#services">Full Detail &mdash; &pound;60</Link></li>
-            <li><Link href="/#services">Mini Valet &mdash; &pound;40</Link></li>
-            <li><Link href="/#services">Full Interior &mdash; &pound;25</Link></li>
-            <li><Link href="/#services">Full Exterior &mdash; &pound;25</Link></li>
-            <li><Link href="/book-now" style={{ color: 'var(--accent)', fontWeight: 700 }}>Book Your Detail &rarr;</Link></li>
+            <li><Link href="/#services">Full Detail</Link></li>
+            <li><Link href="/#services">Mini Valet</Link></li>
+            <li><Link href="/#services">Full Interior</Link></li>
+            <li><Link href="/#services">Full Exterior</Link></li>
+            <li><Link href="/book-now" style={{ color: "var(--accent)", fontWeight: 700 }}>Book Your Detail &rarr;</Link></li>
           </ul>
         </div>
 
