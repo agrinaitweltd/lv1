@@ -1071,7 +1071,7 @@ button, input, textarea, select { font-family: inherit; }
 .contact-copy h2 em { font-style: italic; color: #c0392b; }
 .contact-copy p { color: #4b5a74; font-size: 0.93rem; margin-bottom: 0.8rem; }
 .contact-avail { font-weight: 700; letter-spacing: 0.07em; color: var(--dark-text) !important; }
-.contact-form-outer { position: relative; padding: 2.4rem 0 2.8rem; }
+.contact-form-outer { position: relative; padding: 2.4rem 0 2.8rem; overflow: visible; }
 .contact-deco-l {
   position: absolute;
   left: -74px;
@@ -1573,6 +1573,8 @@ button, input, textarea, select { font-family: inherit; }
   .about-grid,
   .contact-grid,
   .book-form-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .contact-deco-l, .contact-deco-r { display: none; }
+  .contact-form-outer { padding: 0; }
   .about-image-wrap { height: 340px; }
   .services-body { grid-template-columns: 1fr; }
   .services-nav {
