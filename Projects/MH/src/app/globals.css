@@ -291,7 +291,7 @@ button, input, textarea, select { font-family: inherit; }
   border-left: 1px solid rgba(97, 221, 217, 0.2);
 }
 .topbar-socials a {
-  color: rgba(200, 220, 255, 0.65);
+  color: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: center;
   transition: color 0.2s ease;
@@ -452,6 +452,10 @@ button, input, textarea, select { font-family: inherit; }
   filter: brightness(1.08);
 }
 
+/* Desktop-only / mobile-only button visibility */
+.desktop-only-btn { display: flex; }
+.mobile-ham { display: none !important; }
+
 /* Hamburger — shown on mobile, pre-scroll */
 .menu-toggle {
   display: none;
@@ -540,6 +544,29 @@ button, input, textarea, select { font-family: inherit; }
 .drawer-label { flex: 1; }
 .drawer-arrow { color: #b0bfcf; font-size: 0.85rem; }
 
+/* ─── Scroll reveal ─── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(.2,.7,.2,1), transform 0.8s cubic-bezier(.2,.7,.2,1);
+}
+.scroll-reveal.in-view { opacity: 1; transform: none; }
+.scroll-reveal.delay-1 { transition-delay: 100ms; }
+.scroll-reveal.delay-2 { transition-delay: 220ms; }
+.scroll-reveal.delay-3 { transition-delay: 340ms; }
+
+/* ─── Extra animation: tilt on card hover ─── */
+.process-card { transform-style: preserve-3d; }
+.process-card:hover { transform: translateY(-10px) scale(1.03) rotateX(2deg); }
+.testi-card { transform-origin: center bottom; }
+
+/* ─── Glow pulse on service panel ─── */
+.service-panel { animation: fadeInUp 0.45s cubic-bezier(.2,.8,.3,1) both; }
+.service-panel:hover { box-shadow: 0 0 40px rgba(97,221,217,0.12); transition: box-shadow 0.3s ease; }
+
+/* ─── Floating badge on hero deco ─── */
+.hero-deco-shape { animation: floatSlow 7s ease-in-out infinite, borderGlow 4s ease-in-out infinite; }
+
 /* Hero */
 .hero {
   position: relative;
@@ -547,7 +574,7 @@ button, input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: url("https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=2000") center/cover no-repeat;
+  background: url("/hero-bg.png") center/cover no-repeat;
 }
 .hero::before {
   content: "";
@@ -1327,14 +1354,14 @@ button, input, textarea, select { font-family: inherit; }
   display: block;
 }
 .footer-brand-desc {
-  color: rgba(210, 225, 248, 0.78);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.9rem;
   line-height: 1.65;
   margin: 0;
   max-width: 260px;
 }
 .footer-brand-note {
-  color: rgba(180, 205, 240, 0.5);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1362,12 +1389,12 @@ button, input, textarea, select { font-family: inherit; }
   gap: 0.8rem;
 }
 .footer-col li {
-  color: rgba(200, 220, 248, 0.72);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.91rem;
   line-height: 1.6;
 }
 .footer-col a {
-  color: rgba(200, 220, 248, 0.72);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.91rem;
   transition: color 0.22s ease;
 }
@@ -1436,9 +1463,9 @@ button, input, textarea, select { font-family: inherit; }
   gap: 1rem;
   padding: 1.2rem 0;
 }
-.footer-bottom p { color: rgba(140, 165, 200, 0.75); font-size: 0.82rem; margin: 0; }
+.footer-bottom p { color: rgba(255, 255, 255, 0.72); font-size: 0.82rem; margin: 0; }
 .footer-bottom-links { display: flex; gap: 1.2rem; }
-.footer-bottom-links a { color: rgba(140, 165, 200, 0.75); font-size: 0.82rem; transition: color 0.2s; }
+.footer-bottom-links a { color: rgba(255, 255, 255, 0.72); font-size: 0.82rem; transition: color 0.2s; }
 .footer-bottom-links a:hover { color: #ffffff; }
 /* Mobile footer bar */
 .footer-mob-bar { display: none; }
@@ -1530,10 +1557,13 @@ button, input, textarea, select { font-family: inherit; }
   .footer-mini-copy { text-align: left; }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .section-shell { padding: 4rem 0; }
   /* Hamburger visible on mobile (pre-scroll only, controlled via JSX) */
   .menu-toggle:not(.scrolled-menu) { display: flex; }
+  /* Mobile scrolled: show hamburger, hide MENU text button */
+  .mobile-ham { display: flex !important; }
+  .desktop-only-btn { display: none !important; }
   .topbar-right .topbar-contact:not(:first-child) { display: none; }
   .topbar-socials { padding-left: 0; border-left: none; }
   /* Nav links hidden on mobile — use drawer instead */

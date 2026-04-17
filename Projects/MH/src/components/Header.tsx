@@ -135,21 +135,32 @@ export default function Header({ currentPath = "/" }: { currentPath?: string }) 
         {/* CTA — only visible before scroll */}
         {!scrolled && <Link href="/book-now" className="nav-cta">BOOK NOW &rarr;</Link>}
 
-        {/* Scrolled state: MENU button */}
+        {/* Scrolled state: desktop — scroll to top; mobile — open drawer */}
         {scrolled && (
-          <button
-            className={`menu-toggle scrolled-menu ${open ? "is-open" : ""}`}
-            onClick={() => setOpen((p) => !p)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            MENU
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-              <line x1="3" y1="6" x2="21" y2="6"/>
-              <line x1="3" y1="12" x2="21" y2="12"/>
-              <line x1="3" y1="18" x2="21" y2="18"/>
-            </svg>
-          </button>
+          <>
+            {/* Desktop only: scroll back to top */}
+            <button
+              className="scrolled-menu desktop-only-btn"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Back to top"
+            >
+              MENU
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            </button>
+            {/* Mobile only: open the overlay drawer */}
+            <button
+              className="menu-toggle mobile-ham"
+              onClick={() => setOpen((p) => !p)}
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              <span /><span /><span />
+            </button>
+          </>
         )}
 
         {/* Hamburger — mobile only, pre-scroll */}

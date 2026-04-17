@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
@@ -11,7 +11,7 @@ const SERVICES = [
     label: "Full Detail",
     price: "£60",
     tag: "Most Popular",
-    bg: "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    bg: "/service-full-detail.png",
     points: [
       "Full exterior wash & polish",
       "Interior deep clean",
@@ -26,7 +26,7 @@ const SERVICES = [
     id: "mini-valet",
     label: "Mini Valet",
     price: "£40",
-    bg: "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    bg: "/service-mini-valet.png",
     points: [
       "Exterior snow-foam wash",
       "Interior wipe-down & vacuum",
@@ -40,7 +40,7 @@ const SERVICES = [
     id: "full-interior",
     label: "Full Interior",
     price: "£25",
-    bg: "https://images.pexels.com/photos/6873088/pexels-photo-6873088.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    bg: "/service-full-interior.png",
     points: [
       "Seats deep-cleaned",
       "Carpets and mats refreshed",
@@ -54,7 +54,7 @@ const SERVICES = [
     id: "full-exterior",
     label: "Full Exterior",
     price: "£25",
-    bg: "https://images.pexels.com/photos/4674343/pexels-photo-4674343.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    bg: "/service-full-exterior.png",
     points: [
       "Snow-foam pre-wash",
       "Safe hand wash",
@@ -91,24 +91,24 @@ const TESTIMONIALS = [
 
 const GALLERY = [
   {
-    src: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "White BMW being detailed",
+    src: "/gallery-1.png",
+    alt: "Car detailing result 1",
   },
   {
-    src: "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Detailer polishing black car",
+    src: "/gallery-2.png",
+    alt: "Car detailing result 2",
   },
   {
-    src: "https://images.pexels.com/photos/6873088/pexels-photo-6873088.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Interior mat cleaning",
+    src: "/gallery-3.png",
+    alt: "Car detailing result 3",
   },
   {
-    src: "https://images.pexels.com/photos/4674343/pexels-photo-4674343.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Black car after detailing",
+    src: "/gallery-4.png",
+    alt: "Car detailing result 4",
   },
   {
-    src: "https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "White Audi after detailing",
+    src: "/gallery-5.png",
+    alt: "Car detailing result 5",
   },
 ];
 
@@ -133,7 +133,16 @@ const PROCESS = [
 
 export default function Home() {
   const [activeService, setActiveService] = useState(SERVICES[0].id);
-  const active = SERVICES.find((s) => s.id === activeService)!;
+  const active = SERVICES.find((s) => s.id === activeService)!
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in-view"); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);;
 
   return (
     <main>
@@ -166,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about section-shell">
+      <section className="about section-shell scroll-reveal">
         <div className="container about-grid">
           <div className="about-copy">
             <h2 className="about-headline">#DETAILING<br /><em>THE MH WAY</em></h2>
@@ -183,8 +192,8 @@ export default function Home() {
           <div className="about-image-wrap">
             <div className="about-deco-shape" aria-hidden="true" />
             <img
-              src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=900"
-              alt="Detailer polishing car"
+              src="/about.png"
+              alt="M.H Detailz at work"
               className="about-img"
             />
           </div>
@@ -228,7 +237,7 @@ export default function Home() {
         <p className="services-note container">Prices may vary depending on vehicle type and condition.</p>
       </section>
 
-      <section className="process-home section-shell">
+      <section className="process-home section-shell scroll-reveal">
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Process</p>
@@ -247,7 +256,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="gallery section-shell" id="gallery">
+      <section className="gallery section-shell scroll-reveal" id="gallery">
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Results</p>
@@ -265,7 +274,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="testimonials section-shell">
+      <section className="testimonials section-shell scroll-reveal">
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Reviews</p>
@@ -286,7 +295,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="contact-section section-shell">
+      <section id="contact" className="contact-section section-shell scroll-reveal">
         <div className="container contact-grid">
           <div className="contact-copy">
             <h2>REACH <em>OUT</em></h2>
