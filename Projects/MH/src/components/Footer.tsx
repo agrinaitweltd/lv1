@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <p> {new Date().getFullYear()} M.H Detailz. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} M.H Detailz. All Rights Reserved.</p>
         <div className="footer-bottom-links">
           <Link href="/">Home</Link>
           <Link href="/book-now">Book Now</Link>

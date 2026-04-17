@@ -139,7 +139,7 @@ export default function Home() {
         <div className="hero-deco-shape" aria-hidden="true" />
         <div className="hero-brand-vertical" aria-hidden="true">M.H DETAILZ</div>
         <div className="hero-content fade-in-up">
-          <p className="eyebrow">Premium Car Detailing  UK</p>
+          <p className="eyebrow">Premium Car Detailing · UK</p>
           <h1 className="hero-headline">
             <span>CORRECTION.</span>
             <span>REFLECTION.</span>
@@ -216,7 +216,7 @@ export default function Home() {
               <ul className="service-points">
                 {active.points.map((p) => <li key={p}>{p}</li>)}
               </ul>
-              <Link href="/book-now" className="btn-primary service-cta">{active.label} </Link>
+              <Link href="/book-now" className="btn-primary service-cta">{active.label} →</Link>
             </div>
           </div>
         </div>
@@ -285,7 +285,7 @@ export default function Home() {
             <h2>REACH <em>OUT</em></h2>
             <p>Have a question or want a quote? We would love to hear from you.</p>
             <p>Send your vehicle details and preferred service. We respond as fast as possible with available slots.</p>
-            <p className="contact-avail">Sat & Sun  11:00 AM - 6:00 PM</p>
+            <p className="contact-avail">Sat & Sun · 11:00 AM - 6:00 PM</p>
           </div>
           <div className="contact-form-outer">
             <div className="contact-deco-l" aria-hidden="true" />
@@ -298,7 +298,7 @@ export default function Home() {
               </div>
               <label>Vehicle Make & Model<input type="text" name="vehicle" /></label>
               <label>Message<textarea name="message" rows={4} /></label>
-              <button type="submit" className="btn-primary form-submit">Send </button>
+              <button type="submit" className="btn-primary form-submit">Send →</button>
             </form>
           </div>
         </div>
