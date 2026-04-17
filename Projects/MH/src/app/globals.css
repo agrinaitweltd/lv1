@@ -567,7 +567,7 @@ button, input, textarea, select { font-family: inherit; }
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(190, 210, 242, 0.5);
+  color: #ffffff;
 }
 .hero-content {
   position: relative;
@@ -608,7 +608,7 @@ button, input, textarea, select { font-family: inherit; }
   font-size: 0.9rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(237, 243, 255, 0.92);
+  color: #ffffff;
   margin-bottom: 2rem;
   animation: fadeInUp 0.7s cubic-bezier(.2,.8,.3,1) 360ms both;
 }
@@ -651,7 +651,6 @@ button, input, textarea, select { font-family: inherit; }
 }
 .trust-card h3 {
   font-size: 1.5rem;
-  color: var(--accent);
   margin-bottom: 0.1rem;
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
@@ -662,7 +661,7 @@ button, input, textarea, select { font-family: inherit; }
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-soft);
+  color: #ffffff;
 }
 
 .about {
@@ -748,12 +747,14 @@ button, input, textarea, select { font-family: inherit; }
 }
 .services-header .eyebrow { color: #ffffff; }
 .services-header .section-rule { background: var(--accent); }
-.service-tab { color: #c8daf5; }
-.service-tab:hover { color: #ffffff; }
+.service-tab { color: #ffffff; }
+.service-tab:hover { color: var(--accent); }
+.service-tab.active { color: var(--accent); }
 .service-panel h3 { color: #ffffff; }
 .service-panel-price { color: #ffffff; }
-.service-desc { color: #ddeeff; }
-.service-points li { color: #e8f3ff; }
+.service-desc { color: #ffffff; }
+.service-points li { color: #ffffff; }
+.services-note { color: #ffffff; }
 .services-body {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -1303,12 +1304,14 @@ button, input, textarea, select { font-family: inherit; }
 .footer-brand-col {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.7rem;
 }
 .footer-brand-col .footer-logo-img {
-  height: 52px;
+  height: 80px;
   width: auto;
   margin: 0 0 0.4rem;
+  display: block;
 }
 .footer-brand-desc {
   color: rgba(210, 225, 248, 0.78);
