@@ -1046,7 +1046,7 @@ button, input, textarea, select { font-family: inherit; }
 .testi-card p { color: #3f4d66; font-size: 0.92rem; line-height: 1.65; margin: 0.7rem 0 1rem; }
 .testi-card strong { color: var(--accent-dark); font-size: 0.9rem; }
 
-.contact-section { background: var(--bg-light); }
+.contact-section { background: var(--bg-light); overflow: hidden; }
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1071,7 +1071,7 @@ button, input, textarea, select { font-family: inherit; }
 .contact-copy h2 em { font-style: italic; color: #c0392b; }
 .contact-copy p { color: #4b5a74; font-size: 0.93rem; margin-bottom: 0.8rem; }
 .contact-avail { font-weight: 700; letter-spacing: 0.07em; color: var(--dark-text) !important; }
-.contact-form-outer { position: relative; padding: 2.4rem 0 2.8rem; overflow: visible; }
+.contact-form-outer { position: relative; padding: 2.4rem 0 2.8rem; min-width: 0; }
 .contact-deco-l {
   position: absolute;
   left: -74px;
