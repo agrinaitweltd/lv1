@@ -496,7 +496,7 @@ button, input, textarea, select { font-family: inherit; }
 }
 .scrolled-menu:hover { background: #f4f6fa; border-color: #9aabbf; }
 
-/* Drawer nav — used for scrolled + mobile */
+/* Drawer nav — desktop: compact dropdown; mobile: full-screen overlay */
 .nav-drawer {
   position: absolute;
   top: calc(100% + 8px);
@@ -507,25 +507,38 @@ button, input, textarea, select { font-family: inherit; }
   box-shadow: 0 12px 36px rgba(0,0,0,0.13);
   display: flex;
   flex-direction: column;
-  min-width: 180px;
+  min-width: 200px;
   overflow: hidden;
   z-index: 99;
   animation: slideDown 0.22s cubic-bezier(.2,.8,.3,1) both;
 }
-.nav-drawer a {
+/* Desktop: hide overlay-specific parts */
+.drawer-header { display: none; }
+.drawer-footer { display: none; }
+.drawer-items { display: contents; }
+
+/* Desktop drawer items (inherit from .nav-drawer a style) */
+.drawer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   padding: 0.85rem 1.2rem;
   font-family: var(--font-heading), sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: #1e2d42;
   border-bottom: 1px solid #f0f3f8;
+  text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease;
 }
-.nav-drawer a:last-child { border-bottom: 0; }
-.nav-drawer a:hover,
-.nav-drawer a.active { background: #f5f8ff; color: var(--accent-dark); }
+.drawer-item:last-child { border-bottom: 0; }
+.drawer-item:hover,
+.drawer-item.active { background: #f5f8ff; color: var(--accent-dark); }
+.drawer-num { font-size: 0.7rem; color: #b0bfcf; min-width: 18px; }
+.drawer-label { flex: 1; }
+.drawer-arrow { color: #b0bfcf; font-size: 0.85rem; }
 
 /* Hero */
 .hero {
@@ -776,7 +789,7 @@ button, input, textarea, select { font-family: inherit; }
   border: 0;
   border-left: 3px solid transparent;
   background: transparent;
-  color: var(--text-soft);
+  color: #ffffff;
   font-family: var(--font-heading), sans-serif;
   font-size: 0.81rem;
   font-weight: 700;
@@ -785,7 +798,7 @@ button, input, textarea, select { font-family: inherit; }
   cursor: pointer;
   transition: color 0.22s ease, background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
 }
-.service-tab:hover { color: var(--text); transform: translateX(3px); }
+.service-tab:hover { color: var(--accent); transform: translateX(3px); }
 .service-tab.active {
   color: var(--accent);
   border-left-color: var(--accent);
@@ -899,7 +912,7 @@ button, input, textarea, select { font-family: inherit; }
   text-transform: uppercase;
 }
 .process-card h3 { font-size: 1rem; margin-bottom: 0.35rem; color: #ffffff; text-transform: uppercase; }
-.process-card p { font-size: 0.88rem; color: #9cb0cd; }
+.process-card p { font-size: 0.88rem; color: #ffffff; }
 
 .gallery {
   background: var(--bg-light);
@@ -1074,7 +1087,7 @@ button, input, textarea, select { font-family: inherit; }
   font-weight: 900;
 }
 .booking-intro-sub {
-  color: var(--text-soft);
+  color: #ffffff;
   margin-top: 0.7rem;
   max-width: 740px;
 }
@@ -1265,7 +1278,7 @@ button, input, textarea, select { font-family: inherit; }
   margin-bottom: 0.35rem;
 }
 .faq-card p {
-  color: #9cb0cd;
+  color: #ffffff;
   font-size: 0.88rem;
 }
 
@@ -1529,6 +1542,106 @@ button, input, textarea, select { font-family: inherit; }
   .nav-search-wrap { display: none; }
   /* Show CTA on mobile */
   .nav-cta { font-size: 0.72rem; padding: 0.55rem 1rem; }
+
+  /* ── Full-screen mobile menu overlay ── */
+  .nav-drawer {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0;
+    border: none;
+    min-width: unset;
+    background: linear-gradient(160deg, #0c1220 0%, #08101c 60%, #060d17 100%);
+    animation: overlayFade 0.28s ease both;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: none;
+    top: 0;
+    right: 0;
+  }
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 1.5rem;
+    border-bottom: 1px solid rgba(97, 221, 217, 0.12);
+    flex-shrink: 0;
+  }
+  .drawer-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    transition: color 0.18s ease;
+  }
+  .drawer-close:hover { color: #fff; }
+  .drawer-items {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.5rem 1.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    transition: background 0.15s ease, padding-left 0.18s ease;
+  }
+  .drawer-item:hover { background: rgba(97, 221, 217, 0.05); padding-left: 2rem; color: #ffffff; }
+  .drawer-item.active { color: var(--accent); }
+  .drawer-num {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.28);
+    letter-spacing: 0.05em;
+    min-width: 22px;
+  }
+  .drawer-label {
+    flex: 1;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: -0.01em;
+    text-transform: none;
+    line-height: 1;
+  }
+  .drawer-arrow { color: rgba(255, 255, 255, 0.3); font-size: 1.1rem; }
+  .drawer-footer {
+    display: block;
+    padding: 1.8rem 1.5rem 2.4rem;
+    flex-shrink: 0;
+  }
+  .drawer-book-cta {
+    display: block;
+    padding: 1.05rem 1.4rem;
+    background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+    color: #04151b;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.88rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+  .drawer-book-cta:hover { filter: brightness(1.08); transform: translateY(-2px); }
   .hero-brand-vertical { display: none; }
   .hero-deco-shape { width: 340px; height: 340px; right: -58px; top: -56px; }
   .hero-content { margin-left: 0; padding: 9.5rem 1.2rem 4.5rem; }

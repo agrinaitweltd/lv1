@@ -162,9 +162,46 @@ export default function Header({ currentPath = "/" }: { currentPath?: string }) 
         {/* Mobile / scrolled nav drawer */}
         {open && (
           <nav className="nav-drawer">
-            <Link href="/" className={currentPath === "/" ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/book-now" className={currentPath === "/book-now" ? "active" : ""} onClick={() => setOpen(false)}>Book Now</Link>
-            <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+            {/* Header bar inside overlay — visible on mobile only */}
+            <div className="drawer-header">
+              <Link href="/" className="drawer-logo" onClick={() => setOpen(false)}>
+                <img src="/logo.png" alt="M.H Detailz" style={{ height: "44px", width: "auto" }} />
+              </Link>
+              <button className="drawer-close" onClick={() => setOpen(false)} aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            {/* Numbered nav items */}
+            <div className="drawer-items">
+              <Link href="/" className={`drawer-item${currentPath === "/" ? " active" : ""}`} onClick={() => setOpen(false)}>
+                <span className="drawer-num">01</span>
+                <span className="drawer-label">Home</span>
+                <span className="drawer-arrow">→</span>
+              </Link>
+              <a href="/#about" className="drawer-item" onClick={() => setOpen(false)}>
+                <span className="drawer-num">02</span>
+                <span className="drawer-label">About</span>
+              </a>
+              <a href="/#services" className="drawer-item" onClick={() => setOpen(false)}>
+                <span className="drawer-num">03</span>
+                <span className="drawer-label">Services</span>
+                <span className="drawer-arrow">↓</span>
+              </a>
+              <a href="/#contact" className="drawer-item" onClick={() => setOpen(false)}>
+                <span className="drawer-num">04</span>
+                <span className="drawer-label">Contact</span>
+              </a>
+            </div>
+
+            {/* CTA at bottom — visible on mobile only */}
+            <div className="drawer-footer">
+              <Link href="/book-now" className="drawer-book-cta" onClick={() => setOpen(false)}>
+                Book Your Detail →
+              </Link>
+            </div>
           </nav>
         )}
       </div>
