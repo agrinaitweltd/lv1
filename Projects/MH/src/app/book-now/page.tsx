@@ -20,6 +20,21 @@ const SERVICE_OPTIONS = [
   "Full Exterior - £25",
 ];
 
+const CAR_COLOURS = [
+  "Black", "White", "Silver", "Grey", "Blue", "Red", "Green", "Yellow", "Orange", "Brown", "Purple", "Other",
+];
+
+const CONDITION_OPTIONS = [
+  "Excellent – light dust only",
+  "Good – standard road dirt",
+  "Fair – moderate soiling",
+  "Poor – heavy soiling / pet hair / stains",
+];
+
+const VEHICLE_TYPES = [
+  "Hatchback", "Saloon", "Estate", "SUV / 4x4", "MPV / People Carrier", "Coupe", "Convertible", "Van / Commercial",
+];
+
 const PROCESS_STEPS = [
   {
     title: "Select Your Slot",
@@ -191,48 +206,101 @@ export default function BookNowPage() {
             <form className="booking-form image-style" onSubmit={handleSubmit}>
               <label>
                 Full Name
-                <input type="text" name="name" required />
+                <input type="text" name="name" required placeholder="e.g. John Smith" />
               </label>
 
               <div className="form-row">
                 <label>
                   Email
-                  <input type="email" name="email" required />
+                  <input type="email" name="email" required placeholder="your@email.com" />
                 </label>
                 <label>
                   Phone
-                  <input type="tel" name="phone" required />
+                  <input type="tel" name="phone" required placeholder="07xxx xxxxxx" />
                 </label>
               </div>
 
               <div className="form-row">
                 <label>
                   Vehicle Make
-                  <input type="text" name="make" required />
+                  <input type="text" name="make" required placeholder="e.g. BMW" />
                 </label>
                 <label>
                   Vehicle Model
-                  <input type="text" name="model" required />
+                  <input type="text" name="model" required placeholder="e.g. 3 Series" />
+                </label>
+              </div>
+
+              <div className="form-row">
+                <label>
+                  Registration
+                  <input type="text" name="reg" placeholder="e.g. AB12 CDE" style={{ textTransform: "uppercase" }} />
+                </label>
+                <label>
+                  Vehicle Colour
+                  <select name="colour" defaultValue="">
+                    <option value="" disabled>Select colour</option>
+                    {CAR_COLOURS.map((c) => <option key={c} value={c}>{c}</option>)}
+                  </select>
+                </label>
+              </div>
+
+              <div className="form-row">
+                <label>
+                  Vehicle Type
+                  <select name="vehicle_type" defaultValue="">
+                    <option value="" disabled>Select type</option>
+                    {VEHICLE_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                </label>
+                <label>
+                  Service Required
+                  <select name="service" required defaultValue="">
+                    <option value="" disabled>Choose service</option>
+                    {SERVICE_OPTIONS.map((s) => (
+                      <option key={s} value={s}>{s}</option>
+                    ))}
+                  </select>
                 </label>
               </div>
 
               <label>
-                Service Required
-                <select required defaultValue="">
-                  <option value="" disabled>Choose service</option>
-                  {SERVICE_OPTIONS.map((s) => (
-                    <option key={s} value={s}>{s}</option>
-                  ))}
+                Vehicle Condition
+                <select name="condition" defaultValue="">
+                  <option value="" disabled>Select condition</option>
+                  {CONDITION_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
                 </select>
+              </label>
+
+              <div className="form-row">
+                <label>
+                  Town / City
+                  <input type="text" name="town" placeholder="e.g. London" />
+                </label>
+                <label>
+                  Postcode
+                  <input type="text" name="postcode" placeholder="e.g. SW1A 1AA" style={{ textTransform: "uppercase" }} />
+                </label>
+              </div>
+
+              <label>
+                Preferred Date
+                <input
+                  type="text"
+                  name="preferred_date"
+                  readOnly
+                  value={selectedDate ? selectedDate.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" }) : ""}
+                  placeholder="Select a weekend date above"
+                />
               </label>
 
               <label>
                 Additional Notes
-                <textarea rows={4} name="notes" placeholder="Tell us about current condition, stains, pet hair, or anything useful..." />
+                <textarea rows={3} name="notes" placeholder="Any special requests, stains, pet hair, or extra info..." />
               </label>
 
               <button className={`btn-primary booking-submit ${submitted ? "success" : ""}`} type="submit">
-                {submitted ? "Booking Confirmed" : "Confirm Booking"}
+                {submitted ? "✓ Booking Confirmed!" : "Confirm Booking →"}
               </button>
             </form>
           </div>
