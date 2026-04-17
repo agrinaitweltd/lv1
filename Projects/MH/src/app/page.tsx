@@ -11,6 +11,7 @@ const SERVICES = [
     label: "Full Detail",
     price: "£60",
     tag: "Most Popular",
+    bg: "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=1800",
     points: [
       "Full exterior wash & polish",
       "Interior deep clean",
@@ -25,6 +26,7 @@ const SERVICES = [
     id: "mini-valet",
     label: "Mini Valet",
     price: "£40",
+    bg: "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1800",
     points: [
       "Exterior snow-foam wash",
       "Interior wipe-down & vacuum",
@@ -38,6 +40,7 @@ const SERVICES = [
     id: "full-interior",
     label: "Full Interior",
     price: "£25",
+    bg: "https://images.pexels.com/photos/6873088/pexels-photo-6873088.jpeg?auto=compress&cs=tinysrgb&w=1800",
     points: [
       "Seats deep-cleaned",
       "Carpets and mats refreshed",
@@ -51,6 +54,7 @@ const SERVICES = [
     id: "full-exterior",
     label: "Full Exterior",
     price: "£25",
+    bg: "https://images.pexels.com/photos/4674343/pexels-photo-4674343.jpeg?auto=compress&cs=tinysrgb&w=1800",
     points: [
       "Snow-foam pre-wash",
       "Safe hand wash",
@@ -187,8 +191,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="services section-shell">
-        <div className="services-bg-overlay" aria-hidden="true" />
+      <section id="services" className="services section-shell"
+        style={{ backgroundImage: `url("${active.bg}")`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        <div className="services-bg-overlay" key={activeService} aria-hidden="true" />
         <div className="container services-layout">
           <div className="services-header">
             <h2>M.H DETAILZ SERVICES</h2>
@@ -268,14 +273,16 @@ export default function Home() {
             <div className="section-rule" />
           </div>
         </div>
-        <div className="testimonials-track">
-          {TESTIMONIALS.map((t) => (
-            <article key={t.name} className="testi-card">
-              <span className="testi-quote">&ldquo;</span>
-              <p>{t.text}</p>
-              <strong>{t.name}</strong>
-            </article>
-          ))}
+        <div className="testimonials-marquee-outer">
+          <div className="testimonials-track">
+            {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+              <article key={i} className="testi-card">
+                <span className="testi-quote">&ldquo;</span>
+                <p>{t.text}</p>
+                <strong>{t.name}</strong>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

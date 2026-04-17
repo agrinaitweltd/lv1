@@ -18,8 +18,8 @@ export default function Header({ currentPath = "/" }: { currentPath?: string }) 
           </a>
         </div>
 
-        <Link href="/" className="logo">
-          <span className="logo-bold">M.H</span><span className="logo-light">DETAILZ</span>
+        <Link href="/" className="logo" aria-label="M.H Detailz – Home">
+          <img src="/logo.png" alt="M.H Detailz" className="logo-img" />
         </Link>
 
         <nav className={`nav-links ${open ? "open" : ""}`}>
