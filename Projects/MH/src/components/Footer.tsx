@@ -38,7 +38,7 @@ export default function Footer() {
             <li><Link href="/#services">Mini Valet</Link></li>
             <li><Link href="/#services">Full Interior</Link></li>
             <li><Link href="/#services">Full Exterior</Link></li>
-            <li><Link href="/book-now" style={{ color: "var(--accent)", fontWeight: 700 }}>Book Your Detail &rarr;</Link></li>
+            <li style={{ marginTop: "0.4rem" }}><Link href="/book-now" className="footer-cta-link">Book Your Detail &rarr;</Link></li>
           </ul>
         </div>
 

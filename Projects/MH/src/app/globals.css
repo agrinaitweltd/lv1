@@ -54,13 +54,21 @@ button, input, textarea, select { font-family: inherit; }
 .about .eyebrow,
 .book-form-section .eyebrow { color: var(--accent-dark); }
 .section-head { margin-bottom: 2rem; }
+/* Default white — works on both light and dark sections.
+   Light sections override below. */
 .section-head h2 {
-  color: var(--dark-text);
+  color: var(--text);
   font-size: clamp(1.9rem, 3vw, 3.2rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.01em;
 }
+/* Override to dark on light-background sections */
+.about .section-head h2,
+.gallery .section-head h2,
+.testimonials .section-head h2,
+.contact-section .section-head h2,
+.book-form-section .section-head h2 { color: var(--dark-text); }
 .section-head h2 em { font-style: italic; font-weight: 600; }
 .section-rule {
   width: 58px;
@@ -172,7 +180,7 @@ button, input, textarea, select { font-family: inherit; }
 
 /* Logo image */
 .logo-img {
-  height: 44px;
+  height: 50px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -215,7 +223,7 @@ button, input, textarea, select { font-family: inherit; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(200, 220, 255, 0.7);
+  color: rgba(220, 235, 255, 0.92);
 }
 .topbar-right {
   display: flex;
@@ -226,7 +234,7 @@ button, input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: rgba(200, 220, 255, 0.85);
+  color: rgba(220, 235, 255, 0.95);
   font-size: 0.8rem;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -306,7 +314,7 @@ button, input, textarea, select { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.7rem 1.5rem;
+  padding: 0.65rem 1.4rem;
   border-radius: var(--r-btn);
   background: var(--bg);
   color: #ffffff;
@@ -316,11 +324,13 @@ button, input, textarea, select { font-family: inherit; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  border: 2px solid var(--accent-dark);
+  transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
   flex-shrink: 0;
 }
 .nav-cta:hover {
   background: var(--accent-dark);
+  color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(14, 142, 138, 0.35);
 }
@@ -1016,21 +1026,24 @@ button, input, textarea, select { font-family: inherit; }
 }
 .footer-main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.4rem;
+  grid-template-columns: 1.1fr 0.8fr 1.1fr;
+  gap: 3rem;
   align-items: start;
-  padding-bottom: 2.6rem;
+  padding: 3rem 0 3rem;
+  border-bottom: 1px solid rgba(97, 221, 217, 0.12);
 }
-/* Section headings — large italic like reference */
+/* Section headings — tighter, cleaner */
 .footer-col h4 {
   color: var(--accent);
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: 0.01em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(97, 221, 217, 0.2);
   line-height: 1;
 }
 .footer-col ul {
@@ -1041,23 +1054,31 @@ button, input, textarea, select { font-family: inherit; }
   gap: 0.7rem;
 }
 .footer-col li {
-  color: #e0eaf8;
-  font-size: 0.97rem;
-  line-height: 1.4;
+  color: rgba(220, 235, 255, 0.85);
+  font-size: 0.93rem;
+  line-height: 1.6;
 }
 .footer-col a {
-  color: var(--accent);
-  font-size: 0.97rem;
+  color: rgba(220, 235, 255, 0.85);
+  font-size: 0.93rem;
+  transition: color 0.2s ease;
 }
-.footer-col a:hover { color: #ffffff; }
+.footer-col a:hover { color: var(--accent); }
 .footer-col li strong {
   display: inline;
-  color: #e0eaf8;
-  font-weight: 400;
-  font-size: 0.97rem;
+  color: rgba(220, 235, 255, 0.5);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 0.2rem;
 }
 .footer-brand {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
 }
 .footer-socials {
   display: flex;
@@ -1085,14 +1106,14 @@ button, input, textarea, select { font-family: inherit; }
 .footer-tagline {
   color: var(--accent);
   font-family: var(--font-heading), sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-bottom: 0.35rem;
+  margin: 0.1rem 0;
 }
-.footer-mini-copy { color: rgba(197, 214, 242, 0.8); font-size: 0.88rem; line-height: 1.6; }
-.footer-mini-copy.small { opacity: 0.65; font-size: 0.8rem; margin-top: 0.3rem; }
+.footer-mini-copy { color: rgba(197, 214, 242, 0.72); font-size: 0.84rem; line-height: 1.55; text-align: center; }
+.footer-mini-copy.small { opacity: 0.55; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -1105,6 +1126,19 @@ button, input, textarea, select { font-family: inherit; }
 .footer-bottom-links { display: flex; gap: 1rem; }
 .footer-bottom-links a { color: #7a95b8; font-size: 0.83rem; }
 .footer-bottom-links a:hover { color: var(--text); }
+.footer-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--accent) !important;
+  font-weight: 700;
+  font-size: 0.87rem;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(97, 221, 217, 0.35);
+  padding-bottom: 0.1rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer-cta-link:hover { color: #ffffff !important; border-color: rgba(255,255,255,0.4); }
 /* Mobile footer bar — socials + logo inline */
 .footer-mob-bar {
   display: none;
@@ -1133,9 +1167,10 @@ button, input, textarea, select { font-family: inherit; }
   .g-4,
   .g-5 { grid-column: span 12; }
   .trust-grid { grid-template-columns: 1fr 1fr; }
-  .footer-main { grid-template-columns: 1fr; text-align: left; gap: 2.6rem; padding-bottom: 2rem; }
-  .footer-brand { text-align: left; order: -1; }
+  .footer-main { grid-template-columns: 1fr; text-align: left; gap: 2rem; padding: 2.5rem 0 2rem; }
+  .footer-brand { text-align: left; align-items: flex-start; order: -1; }
   .footer-socials { justify-content: flex-start; }
+  .footer-mini-copy { text-align: left; }
 }
 
 @media (max-width: 700px) {
