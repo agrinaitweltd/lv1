@@ -8,9 +8,11 @@ import Header from "@/components/Header";
 const SERVICES = [
   {
     id: "full-detail",
+    category: "SIGNATURE PACKAGE",
     label: "Full Detail",
     price: "£60",
     tag: "Most Popular",
+    size: "All Vehicles",
     bg: "/service-full-detail.png",
     points: [
       "Full exterior wash & polish",
@@ -24,8 +26,10 @@ const SERVICES = [
   },
   {
     id: "mini-valet",
+    category: "MAINTENANCE",
     label: "Mini Valet",
     price: "£40",
+    size: "All Vehicles",
     bg: "/service-mini-valet.png",
     points: [
       "Exterior snow-foam wash",
@@ -38,8 +42,10 @@ const SERVICES = [
   },
   {
     id: "full-interior",
+    category: "INTERIOR",
     label: "Full Interior",
     price: "£25",
+    size: "All Vehicles",
     bg: "/service-full-interior.png",
     points: [
       "Seats deep-cleaned",
@@ -52,8 +58,10 @@ const SERVICES = [
   },
   {
     id: "full-exterior",
+    category: "EXTERIOR",
     label: "Full Exterior",
     price: "£25",
+    size: "All Vehicles",
     bg: "/service-full-exterior.png",
     points: [
       "Snow-foam pre-wash",
@@ -132,8 +140,7 @@ const PROCESS = [
 ];
 
 export default function Home() {
-  const [activeService, setActiveService] = useState(SERVICES[0].id);
-  const active = SERVICES.find((s) => s.id === activeService)!
+  const [openCard, setOpenCard] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -151,17 +158,22 @@ export default function Home() {
       <section className="hero">
         <div className="hero-deco-shape" aria-hidden="true" />
         <div className="hero-brand-vertical" aria-hidden="true">M.H DETAILZ</div>
+        <div className="hero-brands" aria-label="Vehicles we service">
+          {["McLaren", "Aston Martin", "BMW", "Lamborghini", "Ferrari", "Porsche"].map((b) => (
+            <span key={b} className="hero-brand-item">{b}</span>
+          ))}
+        </div>
         <div className="hero-content fade-in-up">
-          <p className="eyebrow">Premium Car Detailing · UK</p>
           <h1 className="hero-headline">
             <span>CORRECTION.</span>
             <span>REFLECTION.</span>
             <span className="accent-word">PROTECTION.</span>
           </h1>
-          <p className="hero-sub">All Roads Lead Home</p>
+          <p className="hero-sub">
+            Premium Car Detailing <span className="hero-sep">///</span> Paint Protection Specialist
+          </p>
           <div className="hero-actions">
-            <Link href="/book-now" className="btn-primary">Book Your Detail</Link>
-            <a href="#services" className="btn-ghost">View Services</a>
+            <Link href="/book-now" className="btn-cta-rust">BOOK MY APPOINTMENT</Link>
           </div>
         </div>
       </section>
@@ -200,41 +212,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="services section-shell"
-        style={{ backgroundImage: `url("${active.bg}")`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <div className="services-bg-overlay" key={activeService} aria-hidden="true" />
-        <div className="container services-layout">
-          <div className="services-header">
+      <section id="services" className="services-grid-section section-shell">
+        <div className="container">
+          <div className="services-grid-header">
+            <p className="eyebrow">Services &amp; Pricing</p>
             <h2>M.H DETAILZ SERVICES</h2>
-            <div className="section-rule" />
+            <p className="services-grid-sub">Choose the package that suits your vehicle. All services delivered by hand with premium products.</p>
           </div>
-          <div className="services-body">
-            <nav className="services-nav" aria-label="Service tabs">
-              {SERVICES.map((s) => (
-                <button
-                  key={s.id}
-                  className={`service-tab ${activeService === s.id ? "active" : ""}`}
-                  onClick={() => setActiveService(s.id)}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </nav>
-            <div className="service-panel" key={activeService}>
-              <div className="service-panel-top">
-                <span className="service-panel-price">{active.price}</span>
-                {active.tag && <span className="service-tag">{active.tag}</span>}
+          <div className="svc-grid">
+            {SERVICES.map((service) => (
+              <div key={service.id} className={`svc-card${service.tag ? " svc-card--gold" : ""}`}>
+                <p className="svc-card-cat">{service.category}</p>
+                <h3 className="svc-card-name"><em>{service.label}</em></h3>
+                <div className="svc-car-icon" aria-hidden="true">
+                  <svg viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="36">
+                    <path d="M14 26H10a3 3 0 01-3-3v-4l5-11h36l5 11v4a3 3 0 01-3 3h-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="19" cy="27" r="5" stroke="currentColor" strokeWidth="1.8"/>
+                    <circle cx="61" cy="27" r="5" stroke="currentColor" strokeWidth="1.8"/>
+                    <path d="M24 26h32" stroke="currentColor" strokeWidth="1.8"/>
+                  </svg>
+                </div>
+                <div className="svc-card-size">
+                  <svg viewBox="0 0 16 16" width="13" height="13" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3"/><path d="M8 5v3.5l2 1" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                  <span>{service.size}</span>
+                </div>
+                <p className="svc-card-price">{service.price}</p>
+                {service.tag && <span className="svc-card-tag">{service.tag}</span>}
+                {openCard === service.id && (
+                  <ul className="svc-card-points">
+                    {service.points.map((p) => <li key={p}>{p}</li>)}
+                  </ul>
+                )}
+                <div className="svc-card-btns">
+                  <Link href="/book-now" className="svc-btn-book">BOOK NOW</Link>
+                  <button
+                    className="svc-btn-included"
+                    type="button"
+                    onClick={() => setOpenCard(openCard === service.id ? null : service.id)}
+                  >
+                    WHAT&apos;S INCLUDED
+                  </button>
+                </div>
               </div>
-              <h3>{active.label}</h3>
-              <p className="service-desc">{active.description}</p>
-              <ul className="service-points">
-                {active.points.map((p) => <li key={p}>{p}</li>)}
-              </ul>
-              <Link href="/book-now" className="btn-primary service-cta">{active.label} →</Link>
-            </div>
+            ))}
           </div>
+          <p className="services-note">Prices may vary depending on vehicle type and condition.</p>
         </div>
-        <p className="services-note container">Prices may vary depending on vehicle type and condition.</p>
       </section>
 
       <section className="process-home section-shell scroll-reveal">
