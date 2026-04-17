@@ -94,11 +94,23 @@ button, input, textarea, select { font-family: inherit; }
   text-transform: uppercase;
   color: #04151b;
   background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+  position: relative;
+  overflow: hidden;
 }
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.55s ease;
+}
+.btn-primary:hover::after { transform: translateX(100%); }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(97, 221, 217, 0.32);
+  box-shadow: 0 14px 36px rgba(97, 221, 217, 0.38);
+  filter: brightness(1.07);
 }
 .btn-ghost {
   display: inline-flex;
@@ -137,6 +149,9 @@ button, input, textarea, select { font-family: inherit; }
 .reveal-up { animation: revealUp 0.75s cubic-bezier(.2,.7,.2,1) both; }
 .slide-in-left { animation: slideInLeft 0.85s cubic-bezier(.2,.7,.2,1) both; }
 .slide-in-right { animation: slideInRight 0.85s cubic-bezier(.2,.7,.2,1) both; }
+.scale-in { animation: scaleIn 0.6s cubic-bezier(.2,.8,.3,1) both; }
+.flip-in { animation: flipIn 0.7s cubic-bezier(.2,.8,.3,1) both; }
+.slide-down { animation: slideDown 0.3s cubic-bezier(.2,.8,.3,1) both; }
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: translateY(0); }
@@ -152,6 +167,26 @@ button, input, textarea, select { font-family: inherit; }
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(40px); }
   to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes flipIn {
+  from { opacity: 0; transform: rotateX(-20deg) translateY(20px); }
+  to { opacity: 1; transform: rotateX(0) translateY(0); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(97, 221, 217, 0.0); }
+  50% { box-shadow: 0 0 22px 6px rgba(97, 221, 217, 0.28); }
+}
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(97, 221, 217, 0.22); }
+  50% { border-color: rgba(97, 221, 217, 0.7); }
 }
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
@@ -176,6 +211,10 @@ button, input, textarea, select { font-family: inherit; }
 @keyframes countUp {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
+}
+@keyframes accentSlide {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
 }
 
 /* Logo image */
@@ -394,23 +433,23 @@ button, input, textarea, select { font-family: inherit; }
   gap: 0.3rem;
   padding: 0.65rem 1.4rem;
   border-radius: var(--r-btn);
-  background: var(--bg);
-  color: #ffffff;
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #04151b;
   font-family: var(--font-heading), sans-serif;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
-  border: 2px solid var(--bg);
+  border: 0;
   flex-shrink: 0;
-  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 4px 18px rgba(97, 221, 217, 0.3);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
 }
 .nav-cta:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(14, 142, 138, 0.35);
+  box-shadow: 0 10px 28px rgba(97, 221, 217, 0.45);
+  filter: brightness(1.08);
 }
 
 /* Hamburger — shown on mobile, pre-scroll */
@@ -471,7 +510,7 @@ button, input, textarea, select { font-family: inherit; }
   min-width: 180px;
   overflow: hidden;
   z-index: 99;
-  animation: fadeInUp 0.18s ease both;
+  animation: slideDown 0.22s cubic-bezier(.2,.8,.3,1) both;
 }
 .nav-drawer a {
   padding: 0.85rem 1.2rem;
@@ -573,10 +612,18 @@ button, input, textarea, select { font-family: inherit; }
   background: rgba(8, 14, 26, 0.78);
   padding: 1rem;
   text-align: center;
-  animation: countUp 0.6s cubic-bezier(.2,.7,.2,1) both;
-  transition: transform 0.24s ease, border-color 0.24s ease;
+  animation: scaleIn 0.6s cubic-bezier(.2,.7,.2,1) both;
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
 }
-.trust-card:hover { transform: translateY(-4px); border-color: rgba(97, 221, 217, 0.5); }
+.trust-card:nth-child(1) { animation-delay: 0ms; }
+.trust-card:nth-child(2) { animation-delay: 80ms; }
+.trust-card:nth-child(3) { animation-delay: 160ms; }
+.trust-card:nth-child(4) { animation-delay: 240ms; }
+.trust-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(97, 221, 217, 0.6);
+  box-shadow: 0 0 24px rgba(97, 221, 217, 0.18);
+}
 .trust-card h3 {
   font-size: 1.5rem;
   color: var(--accent);
@@ -697,13 +744,14 @@ button, input, textarea, select { font-family: inherit; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.22s ease, background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
 }
-.service-tab:hover { color: var(--text); }
+.service-tab:hover { color: var(--text); transform: translateX(3px); }
 .service-tab.active {
   color: var(--accent);
   border-left-color: var(--accent);
   background: rgba(97, 221, 217, 0.09);
+  transform: translateX(4px);
 }
 .service-panel {
   padding: 2rem 2.3rem;
@@ -768,7 +816,10 @@ button, input, textarea, select { font-family: inherit; }
 }
 
 .process-home { background: #0a1322; }
-.process-home .section-head h2 { color: var(--text); }
+.process-home .section-head h2 { color: #ffffff; }
+.process-home p,
+.process-home h3,
+.process-home h4 { color: #edf3ff; }
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -780,9 +831,18 @@ button, input, textarea, select { font-family: inherit; }
   border-radius: 20px;
   padding: 1.2rem;
   box-shadow: var(--shadow-card);
-  transition: transform 0.24s ease, border-color 0.24s ease;
+  animation: flipIn 0.7s cubic-bezier(.2,.8,.3,1) both;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
 }
-.process-card:hover { transform: translateY(-6px); border-color: rgba(97, 221, 217, 0.5); }
+.process-card:nth-child(1) { animation-delay: 0ms; }
+.process-card:nth-child(2) { animation-delay: 100ms; }
+.process-card:nth-child(3) { animation-delay: 200ms; }
+.process-card:nth-child(4) { animation-delay: 300ms; }
+.process-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(97, 221, 217, 0.6);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 20px rgba(97, 221, 217, 0.15);
+}
 .process-index {
   display: inline-block;
   color: var(--accent);
@@ -790,9 +850,11 @@ button, input, textarea, select { font-family: inherit; }
   font-weight: 800;
   letter-spacing: 0.06em;
   margin-bottom: 0.45rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
-.process-card h3 { font-size: 1rem; margin-bottom: 0.35rem; color: var(--text); text-transform: uppercase; }
-.process-card p { font-size: 0.88rem; color: var(--text-soft); }
+.process-card h3 { font-size: 1rem; margin-bottom: 0.35rem; color: #ffffff; text-transform: uppercase; }
+.process-card p { font-size: 0.88rem; color: #9cb0cd; }
 
 .gallery {
   background: var(--bg-light);
@@ -861,10 +923,14 @@ button, input, textarea, select { font-family: inherit; }
   border-radius: 22px;
   padding: 1.6rem;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   border: 1px solid rgba(14, 142, 138, 0.12);
 }
-.testi-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.16); }
+.testi-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 2px rgba(14, 142, 138, 0.2);
+  border-color: rgba(14, 142, 138, 0.4);
+}
 .testi-quote {
   font-family: Georgia, serif;
   font-size: 2.8rem;
@@ -1112,10 +1178,20 @@ button, input, textarea, select { font-family: inherit; }
 }
 .booking-process .section-head h2,
 .booking-faq .section-head h2 {
-  color: var(--text);
+  color: #ffffff;
+}
+.booking-process p,
+.booking-process h3,
+.booking-process h4 {
+  color: #edf3ff;
 }
 .booking-faq {
   background: #070f1e;
+}
+.booking-faq p,
+.booking-faq h3,
+.booking-faq h4 {
+  color: #edf3ff;
 }
 .faq-grid {
   display: grid;
@@ -1127,14 +1203,24 @@ button, input, textarea, select { font-family: inherit; }
   border: 1px solid rgba(97, 221, 217, 0.22);
   background: rgba(8, 14, 26, 0.78);
   padding: 1.1rem;
+  animation: fadeInUp 0.7s cubic-bezier(.2,.8,.3,1) both;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.faq-card:nth-child(1) { animation-delay: 0ms; }
+.faq-card:nth-child(2) { animation-delay: 100ms; }
+.faq-card:nth-child(3) { animation-delay: 200ms; }
+.faq-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(97, 221, 217, 0.5);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.35), 0 0 16px rgba(97, 221, 217, 0.1);
 }
 .faq-card h3 {
-  color: var(--text);
+  color: #ffffff;
   font-size: 1rem;
   margin-bottom: 0.35rem;
 }
 .faq-card p {
-  color: var(--text-soft);
+  color: #9cb0cd;
   font-size: 0.88rem;
 }
 
