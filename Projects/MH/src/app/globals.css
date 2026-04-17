@@ -266,7 +266,7 @@ button, input, textarea, select { font-family: inherit; }
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(220, 235, 255, 0.92);
+  color: #1e2d42;
 }
 .topbar-right {
   display: flex;
@@ -277,7 +277,7 @@ button, input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: rgba(220, 235, 255, 0.95);
+  color: #1e2d42;
   font-size: 0.8rem;
   font-weight: 500;
   transition: color 0.2s ease;
