@@ -322,6 +322,7 @@ export default function Home() {
         <div className="container contact-grid">
           <div className="contact-copy">
             <h2>REACH <em>OUT</em></h2>
+            <div className="copy-rule" aria-hidden="true" />
             <p>If you have a question, some feedback, or you&apos;d like a quote for your vehicle, we&apos;d love to hear from you.</p>
             <p>Complete the contact form and we&apos;ll get back to you as soon as we can. Response times can vary depending on current schedule &mdash; during peak periods, lead times might be anywhere from one to three weeks.</p>
             <p>Feel free to attach photos of your car &mdash; the more details you can provide in your message, the better.</p>

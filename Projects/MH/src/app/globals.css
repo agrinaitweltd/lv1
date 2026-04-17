@@ -1055,15 +1055,23 @@ button, input, textarea, select { font-family: inherit; }
 }
 .contact-copy h2 {
   color: var(--dark-text);
-  font-size: clamp(2rem, 3.8vw, 3.6rem);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
   font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.05;
 }
-.contact-copy h2 em { font-style: italic; }
+.contact-copy .copy-rule {
+  width: 48px;
+  height: 3px;
+  background: #c0392b;
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+}
+.contact-copy h2 em { font-style: italic; color: #c0392b; }
 .contact-copy p { color: #4b5a74; font-size: 0.93rem; margin-bottom: 0.8rem; }
 .contact-avail { font-weight: 700; letter-spacing: 0.07em; color: var(--dark-text) !important; }
-.contact-form-outer { position: relative; padding: 2rem 0; }
+.contact-form-outer { position: relative; padding: 2.4rem 0 2.8rem; }
 .contact-deco-l {
   position: absolute;
   left: -74px;
@@ -1091,10 +1099,19 @@ button, input, textarea, select { font-family: inherit; }
   z-index: 1;
   background: #fff;
   border-radius: 22px;
-  padding: 1.9rem 1.7rem;
-  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.17);
+  padding: 2.2rem 2rem;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.06), 0 24px 64px rgba(0,0,0,0.13);
   display: grid;
-  gap: 0.85rem;
+  gap: 0.9rem;
+  overflow: hidden;
+}
+.contact-form::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #b52a2a, #c0392b 60%, #d44);
+  border-radius: 22px 22px 0 0;
 }
 .contact-form label {
   display: grid;
@@ -1107,18 +1124,21 @@ button, input, textarea, select { font-family: inherit; }
 }
 .contact-form input,
 .contact-form textarea {
-  border: 0;
+  border: 1.5px solid #dde3ee;
   width: 100%;
   border-radius: 8px;
   padding: 0.72rem 0.88rem;
   font-size: 0.93rem;
-  background: #eef2f7;
+  background: #f9fafc;
   color: #131d2d;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(97, 221, 217, 0.55);
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+  background: #fff;
 }
 .contact-form textarea { resize: vertical; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
@@ -2382,7 +2402,8 @@ button, input, textarea, select { font-family: inherit; }
   padding: 0.55rem 0.6rem !important;
   font-size: 0.84rem !important;
   cursor: pointer;
-  background: #eef2f7 !important;
+  background: #f9fafc !important;
+  border: 1.5px solid #dde3ee !important;
   border-radius: 8px !important;
 }
 
