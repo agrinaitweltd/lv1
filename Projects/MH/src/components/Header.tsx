@@ -3,61 +3,33 @@
 import Link from "next/link";
 import { useState } from "react";
 
-type HeaderProps = {
-  currentPath?: string;
-};
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Book Now", href: "/book-now" },
-  { label: "Contact", href: "/#contact" },
-];
-
-export default function Header({ currentPath = "/" }: HeaderProps) {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function Header({ currentPath = "/" }: { currentPath?: string }) {
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="site-header">
-      <div className="container nav-shell">
-        <Link href="/" className="logo" aria-label="M.H Detailz Home">
-          <span>M.H</span>
-          <span>Detailz</span>
+      <div className="nav-shell">
+        <div className="nav-socials">
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.7 1.7 4.8 4.8.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.1-1.6 4.7-4.8 4.8-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1C4 21.4 2.5 19.8 2.4 16.7c-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8C2.5 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7.1.1 2.9.3.3 2.9.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.1 2.9 23.7 7.1 23.9 8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.2-.2 6.8-2.8 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.9 21.1.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>
+          </a>
+        </div>
+
+        <Link href="/" className="logo">
+          <span className="logo-bold">M.H</span><span className="logo-light">DETAILZ</span>
         </Link>
 
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
-        >
-          <span />
-          <span />
-        </button>
-
-        <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {navItems.map((item) => {
-            const isActive =
-              currentPath === item.href ||
-              (item.href !== "/" && currentPath.startsWith(item.href));
-
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={isActive ? "active" : ""}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <nav className={`nav-links ${open ? "open" : ""}`}>
+          <Link href="/" className={currentPath === "/" ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/book-now" className={currentPath === "/book-now" ? "active" : ""} onClick={() => setOpen(false)}>Book Now</Link>
         </nav>
 
-        <Link href="/book-now" className="book-cta">
-          Book Now
-        </Link>
+        <button className="menu-toggle" onClick={() => setOpen((p) => !p)} aria-label="Toggle menu" aria-expanded={open}>
+          <span /><span /><span />
+        </button>
       </div>
     </header>
   );
