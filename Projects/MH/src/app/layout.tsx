@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const montserrat = Montserrat({
   variable: "--font-heading",
@@ -28,7 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${poppins.variable}`}>{children}<CookieConsent /></body>
+      <body className={`${montserrat.variable} ${poppins.variable}`}>
+        <LoadingScreen />
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

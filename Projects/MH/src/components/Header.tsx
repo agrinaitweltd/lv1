@@ -17,6 +17,7 @@ const SEARCH_ITEMS = [
 export default function Header({ currentPath = "/" }: { currentPath?: string }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
@@ -24,7 +25,10 @@ export default function Header({ currentPath = "/" }: { currentPath?: string }) 
   const mobileSearchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      setScrollY(window.scrollY);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -58,7 +62,13 @@ export default function Header({ currentPath = "/" }: { currentPath?: string }) 
     : [];
 
   return (
-    <header className={`site-header${scrolled ? " scrolled" : ""}`}>
+    <header
+      className={`site-header${scrolled ? " scrolled" : ""}`}
+      style={{
+        backdropFilter: scrolled ? `blur(${Math.min(scrollY / 8, 12)}px)` : undefined,
+        WebkitBackdropFilter: scrolled ? `blur(${Math.min(scrollY / 8, 12)}px)` : undefined,
+      }}
+    >
 
       {/* â”€â”€ Top info bar â€” desktop only, hidden when scrolled â”€â”€ */}
       {!scrolled && (

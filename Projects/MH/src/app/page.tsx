@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const SERVICES = [
   {
@@ -153,6 +154,7 @@ export default function Home() {
 
   return (
     <main>
+      <ScrollToTop />
       <Header currentPath="/" />
 
       <section className="hero">

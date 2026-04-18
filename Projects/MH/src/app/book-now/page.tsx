@@ -3,6 +3,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
 
 type CalendarDay = {
   date: Date;
@@ -128,12 +129,13 @@ export default function BookNowPage() {
 
   return (
     <main>
+      <ScrollToTop />
       <Header currentPath="/book-now" />
 
       <section className="booking-hero">
         <div className="container booking-intro fade-in-up">
           <p className="eyebrow">Book Now</p>
-          <h1>Reserve Your Weekend Detail</h1>
+          <h1>Serve Your Weekend</h1>
           <p className="booking-intro-sub">
             Choose your date, submit your details, and we will confirm your slot directly.
           </p>
