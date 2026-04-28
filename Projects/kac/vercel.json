@@ -1,17 +1,19 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/",               "destination": "/index.html" },
     { "source": "/about",          "destination": "/about.html" },
     { "source": "/contact",        "destination": "/contact.html" },
     { "source": "/sourcing",       "destination": "/sourcing.html" },
     { "source": "/export-import",  "destination": "/export-import.html" },
-    { "source": "/products/coffee",        "destination": "/products/coffee.html" }
+    { "source": "/products/coffee", "destination": "/products/coffee.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
-      "source": "/public/(.*)",
+      "source": "/(.*)\\.(?:js|css|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot)$",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
