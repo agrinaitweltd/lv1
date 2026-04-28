@@ -8,8 +8,7 @@
     { "source": "/contact",        "destination": "/contact.html" },
     { "source": "/sourcing",       "destination": "/sourcing.html" },
     { "source": "/export-import",  "destination": "/export-import.html" },
-    { "source": "/products/coffee", "destination": "/products/coffee.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/products/coffee", "destination": "/products/coffee.html" }
   ],
   "headers": [
     {
