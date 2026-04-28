@@ -290,7 +290,10 @@
   }
 
   if (countrySelect && regionRow && stateSelect && regionSelect && citySelect && townSelect) {
-    fetch('/data/location-db.json')
+    fetch('/api/locations')
+      .catch(function() {
+        return fetch('/data/location-db.json');
+      })
       .then(function(res) { return res.json(); })
       .then(function(db) {
         var countries = Array.isArray(db.countries) ? db.countries : [];
