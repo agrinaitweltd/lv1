@@ -290,11 +290,13 @@
   }
 
   if (countrySelect && regionRow && stateSelect && regionSelect && citySelect && townSelect) {
-    fetch('/api/locations')
-      .catch(function() {
-        return fetch('/data/location-db.json');
+    fetch('/data/location-db.json')
+      .then(function(res) {
+        if (!res.ok) {
+          throw new Error('Failed to load location data');
+        }
+        return res.json();
       })
-      .then(function(res) { return res.json(); })
       .then(function(db) {
         var countries = Array.isArray(db.countries) ? db.countries : [];
         var countryByIso2 = {};
