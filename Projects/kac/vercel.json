@@ -2,14 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/",               "destination": "/index.html" },
-    { "source": "/about",          "destination": "/about.html" },
-    { "source": "/contact",        "destination": "/contact.html" },
-    { "source": "/sourcing",       "destination": "/sourcing.html" },
-    { "source": "/export-import",  "destination": "/export-import.html" },
-    { "source": "/products/coffee", "destination": "/products/coffee.html" }
-  ],
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)\\.(?:js|css|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot)$",
