@@ -575,7 +575,7 @@
         thanksPanel.innerHTML =
           '<p style="margin:0 0 0.75rem;font-weight:700;color:var(--green-800);">Thank you. We have received your enquiry.</p>' +
           '<p style="margin:0 0 0.75rem;">Our team will review your details and get back to you within one business day.</p>' +
-          '<p style="margin:0 0 1.2rem;">If it is urgent, please call +44 (0) 000 000 0000.</p>' +
+          '<p style="margin:0 0 1.2rem;">If it is urgent, please call +256 (0) 755 869079.</p>' +
           '<div class="btn-group" style="gap:0.75rem;">' +
             '<a href="/" class="btn btn-primary">Back to Home</a>' +
             '<a href="/products/coffee" class="btn btn-outline">Explore Products</a>' +
@@ -584,5 +584,45 @@
       }
     });
   }
+
+  /* --- Cookies Popup --- */
+  function initCookiesPopup() {
+    var cookieConsent = localStorage.getItem('kac_cookies_consent');
+    var popup = document.getElementById('cookiesPopup');
+    
+    if (!popup) return;
+    
+    if (cookieConsent) {
+      popup.style.display = 'none';
+    } else {
+      popup.style.display = 'flex';
+    }
+    
+    var acceptBtn = popup.querySelector('.cookies-accept');
+    var prefsBtn = popup.querySelector('.cookies-preferences');
+    var closeBtn = popup.querySelector('.cookies-close');
+    
+    function closeCookiesPopup() {
+      popup.style.display = 'none';
+      localStorage.setItem('kac_cookies_consent', 'true');
+    }
+    
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', closeCookiesPopup);
+    }
+    
+    if (prefsBtn) {
+      prefsBtn.addEventListener('click', function() {
+        alert('Cookie preferences can be configured here. For now, clicking Accept allows all cookies.');
+        closeCookiesPopup();
+      });
+    }
+    
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeCookiesPopup);
+    }
+  }
+  
+  initCookiesPopup();
 
 })();
