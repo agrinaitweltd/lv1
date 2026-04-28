@@ -3,7 +3,12 @@ import { resolve } from 'path'
 
 export default defineConfig({
   appType: 'mpa',
+  root: './',
+  publicDir: 'public',
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main:           resolve(__dirname, 'index.html'),
@@ -15,6 +20,11 @@ export default defineConfig({
         fruits:         resolve(__dirname, 'products/fruits.html'),
         grains:         resolve(__dirname, 'products/grains.html'),
         'other-produce': resolve(__dirname, 'products/other-produce.html'),
+      },
+      output: {
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]'
       }
     }
   },
