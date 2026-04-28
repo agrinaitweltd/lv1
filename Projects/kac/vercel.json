@@ -2,6 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/",               "destination": "/index.html" },
     { "source": "/about",          "destination": "/about.html" },
     { "source": "/contact",        "destination": "/contact.html" },
     { "source": "/sourcing",       "destination": "/sourcing.html" },
@@ -10,5 +11,13 @@
     { "source": "/products/fruits",        "destination": "/products/fruits.html" },
     { "source": "/products/grains",        "destination": "/products/grains.html" },
     { "source": "/products/other-produce", "destination": "/products/other-produce.html" }
+  ],
+  "headers": [
+    {
+      "source": "/public/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
   ]
 }
