@@ -592,10 +592,14 @@
     
     if (!popup) return;
     
-    if (cookieConsent) {
-      popup.style.display = 'none';
+    // Show popup only if consent not given
+    if (!cookieConsent) {
+      // Use setTimeout to ensure popup shows after DOM is ready
+      setTimeout(function() {
+        popup.style.display = 'flex';
+      }, 500);
     } else {
-      popup.style.display = 'flex';
+      popup.style.display = 'none';
     }
     
     var acceptBtn = popup.querySelector('.cookies-accept');
@@ -603,17 +607,22 @@
     var closeBtn = popup.querySelector('.cookies-close');
     
     function closeCookiesPopup() {
-      popup.style.display = 'none';
+      popup.style.animation = 'fadeOutCookies 0.3s ease-out forwards';
+      setTimeout(function() {
+        popup.style.display = 'none';
+        popup.style.animation = 'fadeInCookies 0.3s ease-out';
+      }, 300);
       localStorage.setItem('kac_cookies_consent', 'true');
     }
     
+    // Add click handlers
     if (acceptBtn) {
       acceptBtn.addEventListener('click', closeCookiesPopup);
     }
     
     if (prefsBtn) {
       prefsBtn.addEventListener('click', function() {
-        alert('Cookie preferences can be configured here. For now, clicking Accept allows all cookies.');
+        // Show preferences modal (for now just accept)
         closeCookiesPopup();
       });
     }
@@ -621,8 +630,20 @@
     if (closeBtn) {
       closeBtn.addEventListener('click', closeCookiesPopup);
     }
+    
+    // Allow clicking outside to close
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        closeCookiesPopup();
+      }
+    });
   }
   
-  initCookiesPopup();
+  // Initialize cookies popup when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookiesPopup);
+  } else {
+    initCookiesPopup();
+  }
 
 })();
