@@ -1,5 +1,5 @@
 ﻿/* ============================================================
-   Axis International Limited  Main JavaScript
+   Kabalega Coffee Establishment  Main JavaScript
    ============================================================ */
 
 (function () {
