@@ -19,6 +19,7 @@
   --green-50:     #eef8f0;
   --text-900:     #111;
   --text-700:     #333;
+  --text-600:     #444;
   --text-500:     #555;
   --text-400:     #777;
   --text-300:     #999;
@@ -2535,6 +2536,7 @@ footer {
   gap: 3.5rem;
   width: max-content;
   animation: partnerScroll 30s linear infinite;
+  will-change: transform;
 }
 
 .partner-logo {
@@ -2750,6 +2752,27 @@ footer {
   .partners-grid { gap: 1.25rem; justify-content: center; }
   .partner-logo { height: 44px; width: 120px; }
   .partner-logo.partner-lg { height: 60px; width: 160px; }
+  .partners-track { gap: 2.2rem; animation-duration: 38s; }
+
+  /* ---- Mobile motion tuning ---- */
+  .hero-scroll-indicator { display: none; }
+  .hero-slide { animation-duration: 28s; }
+  .fade-up,
+  .slide-in-left,
+  .slide-in-right,
+  .scale-in {
+    transition-duration: 0.55s;
+  }
+  .fade-up { transform: translateY(24px); }
+  .slide-in-left { transform: translateX(-24px); }
+  .slide-in-right { transform: translateX(24px); }
+  .scale-in { transform: scale(0.95) translateY(16px); }
+  .fade-up-delay-1,
+  .fade-up-delay-2,
+  .fade-up-delay-3,
+  .fade-up-delay-4 {
+    transition-delay: 0s;
+  }
 
   /* ---- Process steps ---- */
   .process-steps { gap: 1rem; }
@@ -2780,4 +2803,22 @@ footer {
   .about-stats { grid-template-columns: 1fr; }
   .hero h1 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
   .logo-wrapper { height: 76px; width: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .partners-track,
+  .sourcing-origin-card,
+  .hero-scroll-indicator span::after {
+    animation: none !important;
+  }
+
+  .fade-up,
+  .slide-in-left,
+  .slide-in-right,
+  .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
