@@ -2813,6 +2813,15 @@ footer {
     animation: none !important;
   }
 
+  .hero-badge,
+  .hero h1,
+  .hero p,
+  .hero .btn-group {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .fade-up,
   .slide-in-left,
   .slide-in-right,
