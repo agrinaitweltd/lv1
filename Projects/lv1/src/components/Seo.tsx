@@ -8,20 +8,19 @@ interface SeoProps {
   noindex?: boolean
 }
 
-const BASE_URL = 'https://breezyeemoves.co.uk'
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`
+const BASE_URL = 'https://lvexteriorcleaning.co.uk'
+const DEFAULT_IMAGE = `${BASE_URL}/logo.png`
 
 function normalizeCanonicalPath(path: string): string {
   const withLeadingSlash = path.startsWith('/') ? path : `/${path}`
   if (withLeadingSlash.length > 1 && withLeadingSlash.endsWith('/')) {
     return withLeadingSlash.slice(0, -1)
   }
-
   return withLeadingSlash
 }
 
 export default function Seo({ title, description, canonical, ogImage, noindex = false }: SeoProps) {
-  const fullTitle = title.includes('Breezyee') ? title : `${title} | Breezyee Moves`
+  const fullTitle = title.includes('LV Exterior') ? title : `${title} | LV Exterior Cleaning`
   const canonicalPath = normalizeCanonicalPath(canonical || '/')
   const url = `${BASE_URL}${canonicalPath}`
   const image = ogImage || DEFAULT_IMAGE

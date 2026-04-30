@@ -51,6 +51,19 @@
   flex-direction: column;
 }
 
+.home-svc-card__price-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
 .home-svc-card__body h3 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -76,6 +89,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   transition: gap 0.25s ease;
+  cursor: pointer;
 }
 
 .home-svc-card:hover .home-svc-card__link {
@@ -399,12 +413,21 @@
   gap: 6px;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #E8789A;
+  color: var(--secondary-xlight);
   transition: gap 0.25s ease;
+  cursor: pointer;
 }
 
 .home-helped__card:hover .home-helped__card-btn {
   gap: 10px;
+}
+
+.home-helped__card-price {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--secondary-xlight);
+  margin-bottom: 14px;
 }
 
 /* ========== Home: Testimonials ========== */
@@ -583,4 +606,204 @@
 @keyframes mobileFadeSlideUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Home: Contact ========== */
+.home-contact {
+  background: var(--white);
+}
+
+.home-contact__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Form wrapper */
+.home-contact__form-wrap {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.home-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-contact__field label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.home-contact__field label span {
+  color: var(--primary);
+}
+
+.home-contact__field input,
+.home-contact__field textarea {
+  padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+
+.home-contact__field input:focus,
+.home-contact__field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(27, 138, 60, 0.12);
+}
+
+.home-contact__error {
+  font-size: 0.88rem;
+  color: #dc2626;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border-radius: var(--radius-sm);
+  border: 1px solid #fecaca;
+}
+
+.home-contact__submit {
+  align-self: flex-start;
+  padding: 16px 36px;
+  font-size: 1rem;
+}
+
+/* Success state */
+.home-contact__success {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.home-contact__success-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.home-contact__success h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.home-contact__success p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.home-contact__success a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Sidebar */
+.home-contact__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-contact__info-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 28px 28px 24px;
+  border: 1px solid var(--border);
+}
+
+.home-contact__info-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.home-contact__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.home-contact__phone:hover {
+  color: var(--primary-dark);
+}
+
+.home-contact__info-card > p {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-top: 6px;
+}
+
+/* Price list */
+.home-contact__price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.home-contact__price-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.88rem;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-contact__price-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.home-contact__price-list span {
+  color: var(--text-light);
+}
+
+.home-contact__price-list strong {
+  color: var(--primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-contact__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .home-contact__form-wrap {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-contact__submit {
+    width: 100%;
+    justify-content: center;
+  }
 }
