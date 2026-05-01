@@ -437,39 +437,71 @@ input, textarea, select {
 /* ========== Mobile Animation Enhancements ========== */
 @media (max-width: 768px) {
   .fade-in {
-    transform: translateY(24px);
-    transition-duration: 0.6s;
-  }
-
-  .slide-in-left {
-    transform: translateX(-28px);
-    transition-duration: 0.6s;
-  }
-
-  .slide-in-right {
-    transform: translateX(28px);
-    transition-duration: 0.6s;
-  }
-
-  .slide-in-up {
-    transform: translateY(40px);
-    transition-duration: 0.65s;
-  }
-
-  .scale-in {
-    transform: scale(0.94);
+    transform: translateY(16px);
     transition-duration: 0.5s;
   }
 
-  .zoom-pop {
-    transform: scale(0.88);
+  .slide-in-left {
+    transform: translateX(-20px);
+    transition-duration: 0.5s;
+  }
+
+  .slide-in-right {
+    transform: translateX(20px);
+    transition-duration: 0.5s;
+  }
+
+  .slide-in-up {
+    transform: translateY(28px);
+    transition-duration: 0.5s;
+  }
+
+  .scale-in {
+    transform: scale(0.95);
     transition-duration: 0.45s;
   }
 
-  .stagger-children > * {
-    transform: translateY(18px);
-    transition-duration: 0.45s;
+  .zoom-pop {
+    transform: scale(0.9);
+    transition-duration: 0.4s;
   }
+
+  /* Simplify expensive blur-in on mobile (no GPU filter) */
+  .blur-in {
+    filter: none;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Remove 3D perspective on mobile — causes jank */
+  .flip-in-left {
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .flip-in-left.visible {
+    transform: translateX(0);
+  }
+
+  .stagger-children > * {
+    transform: translateY(14px);
+    transition-duration: 0.4s;
+  }
+
+  /* Halve stagger delays on mobile so content doesn't wait too long */
+  .stagger-children.visible > *:nth-child(1)  { transition-delay: 0ms; }
+  .stagger-children.visible > *:nth-child(2)  { transition-delay: 40ms; }
+  .stagger-children.visible > *:nth-child(3)  { transition-delay: 80ms; }
+  .stagger-children.visible > *:nth-child(4)  { transition-delay: 120ms; }
+  .stagger-children.visible > *:nth-child(5)  { transition-delay: 160ms; }
+  .stagger-children.visible > *:nth-child(6)  { transition-delay: 200ms; }
+  .stagger-children.visible > *:nth-child(7)  { transition-delay: 240ms; }
+  .stagger-children.visible > *:nth-child(8)  { transition-delay: 280ms; }
+  .stagger-children.visible > *:nth-child(9)  { transition-delay: 320ms; }
+  .stagger-children.visible > *:nth-child(10) { transition-delay: 360ms; }
+  .stagger-children.visible > *:nth-child(11) { transition-delay: 400ms; }
+  .stagger-children.visible > *:nth-child(12) { transition-delay: 440ms; }
+  .stagger-children.visible > *:nth-child(13) { transition-delay: 480ms; }
 }
 
 /* Slide-in from bottom (card reveal) */
@@ -573,5 +605,36 @@ input, textarea, select {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ========== Reduced Motion ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .slide-in-up,
+  .slide-in-bottom,
+  .scale-in,
+  .zoom-pop,
+  .rotate-in,
+  .blur-in,
+  .flip-in-left,
+  .clip-reveal,
+  .counter-up,
+  .stagger-children > * {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
+    transition: none;
   }
 }

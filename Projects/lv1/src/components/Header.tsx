@@ -58,7 +58,7 @@ export default function Header() {
       <header className={`header${scrolled ? ' header--scrolled' : ''}${menuOpen ? ' header--menu-open' : ''}`}>
         <div className="container header__inner">
           <a href="#top" className="header__logo" onClick={(e) => handleNav(e, '#top')}>
-            <span className="header__logo-img">LV Exterior Cleaning</span>
+            <img src="/logo.png" alt="LV Exterior Cleaning" className="header__logo-img" />
           </a>
 
           {/* Desktop nav — visible before scroll */}
