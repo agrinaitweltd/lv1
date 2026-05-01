@@ -1,4 +1,4 @@
-export interface ServiceData {
+﻿export interface ServiceData {
   slug: string;
   title: string;
   group: 'home' | 'business';
@@ -20,8 +20,8 @@ export const services: ServiceData[] = [
     title: 'Driveway Pressure Washing',
     group: 'home',
     heroSubtitle: 'Restore Your Driveway',
-    price: 'From £60',
-    desc: 'High-pressure cleaning that removes oil, moss, algae and years of built-up grime — restoring your driveway to its best.',
+    price: 'From Â£60',
+    desc: 'High-pressure cleaning that removes oil, moss, algae and years of built-up grime â€” restoring your driveway to its best.',
     details: 'Our driveway pressure washing service uses professional-grade equipment to blast away years of built-up dirt, oil stains, moss, algae and grime.',
     bannerImg: '/gallery-1.png',
     included: [
@@ -32,14 +32,14 @@ export const services: ServiceData[] = [
       'Post-clean inspection',
     ],
     stats: [
-      { value: 'From £60', label: 'Starting Price' },
-      { value: '1–3 hrs', label: 'Typical Duration' },
+      { value: 'From Â£60', label: 'Starting Price' },
+      { value: '1â€“3 hrs', label: 'Typical Duration' },
       { value: '100%', label: 'Satisfaction' },
     ],
     approach: 'We assess the driveway surface, apply the appropriate pressure setting and detergent, then systematically clean from top to bottom. All waste water is directed away from drains responsibly.',
     faqs: [
-      { q: 'How long does a driveway clean take?', a: 'Most standard driveways take 1–3 hours depending on size and how dirty they are.' },
-      { q: 'Will pressure washing damage my driveway?', a: 'No — we adjust pressure settings based on the surface type to safely clean without causing damage.' },
+      { q: 'How long does a driveway clean take?', a: 'Most standard driveways take 1â€“3 hours depending on size and how dirty they are.' },
+      { q: 'Will pressure washing damage my driveway?', a: 'No â€” we adjust pressure settings based on the surface type to safely clean without causing damage.' },
     ],
   },
   {
@@ -47,8 +47,8 @@ export const services: ServiceData[] = [
     title: 'Fence & Wall Washing',
     group: 'home',
     heroSubtitle: 'Revive Your Fences & Walls',
-    price: 'From £40',
-    desc: 'Bring weathered fences and walls back to life with our thorough pressure washing service — removing green algae, mould and discolouration.',
+    price: 'From Â£40',
+    desc: 'Bring weathered fences and walls back to life with our thorough pressure washing service â€” removing green algae, mould and discolouration.',
     details: 'Fences and walls are constantly exposed to the elements, leading to green algae, mould and general discolouration. Our service removes all of this, restoring the original appearance.',
     bannerImg: '/gallery-2.png',
     included: [
@@ -59,14 +59,14 @@ export const services: ServiceData[] = [
       'Full tidy-up after completion',
     ],
     stats: [
-      { value: 'From £40', label: 'Starting Price' },
-      { value: '1–2 hrs', label: 'Typical Duration' },
+      { value: 'From Â£40', label: 'Starting Price' },
+      { value: '1â€“2 hrs', label: 'Typical Duration' },
       { value: '100%', label: 'Satisfaction' },
     ],
     approach: 'We assess the material (wood, concrete, brick, render) and select the appropriate cleaning method. Delicate surfaces like timber receive a softer wash to avoid damage.',
     faqs: [
-      { q: 'Can you clean treated timber fences?', a: 'Yes — we use appropriate pressure and technique for timber to clean without stripping protective coatings.' },
-      { q: 'How often should fences be cleaned?', a: 'We recommend a clean every 1–2 years to prevent build-up of algae and mould.' },
+      { q: 'Can you clean treated timber fences?', a: 'Yes â€” we use appropriate pressure and technique for timber to clean without stripping protective coatings.' },
+      { q: 'How often should fences be cleaned?', a: 'We recommend a clean every 1â€“2 years to prevent build-up of algae and mould.' },
     ],
   },
   {
@@ -74,8 +74,8 @@ export const services: ServiceData[] = [
     title: 'Patio Pressure Washing',
     group: 'home',
     heroSubtitle: 'Transform Your Outdoor Space',
-    price: 'From £40',
-    desc: 'Transform your patio with a thorough pressure wash — removing moss, stubborn stains and discolouration from slabs and outdoor areas.',
+    price: 'From Â£40',
+    desc: 'Transform your patio with a thorough pressure wash â€” removing moss, stubborn stains and discolouration from slabs and outdoor areas.',
     details: 'Patios can quickly become slippery and unsightly with moss, algae and staining. Our professional pressure washing restores them to a clean, safe condition.',
     bannerImg: '/gallery-3.png',
     included: [
@@ -86,13 +86,13 @@ export const services: ServiceData[] = [
       'Post-clean rinse & tidy',
     ],
     stats: [
-      { value: 'From £40', label: 'Starting Price' },
-      { value: '1–3 hrs', label: 'Typical Duration' },
+      { value: 'From Â£40', label: 'Starting Price' },
+      { value: '1â€“3 hrs', label: 'Typical Duration' },
       { value: '100%', label: 'Satisfaction' },
     ],
     approach: 'We pre-treat stubborn stains and mossy areas before pressure washing, ensuring the best possible result. Weeds between slabs are removed and edges are carefully cleaned.',
     faqs: [
-      { q: 'Can you clean block paving?', a: 'Yes — block paving, concrete slabs, natural stone and porcelain can all be cleaned. We adjust our technique for each surface.' },
+      { q: 'Can you clean block paving?', a: 'Yes â€” block paving, concrete slabs, natural stone and porcelain can all be cleaned. We adjust our technique for each surface.' },
       { q: 'Will the weeds come back?', a: 'We remove visible weeds during the clean. For long-term prevention, we recommend applying a weed killer after the clean dries.' },
     ],
   },
@@ -101,8 +101,8 @@ export const services: ServiceData[] = [
     title: 'Bin Cleaning',
     group: 'home',
     heroSubtitle: 'Fresh & Hygienic Bins',
-    price: 'From £5 per bin',
-    desc: 'Keep your bins hygienic and odour-free with our professional bin cleaning service — inside and out, from just £5 per bin.',
+    price: 'From Â£5 per bin',
+    desc: 'Keep your bins hygienic and odour-free with our professional bin cleaning service â€” inside and out, from just Â£5 per bin.',
     details: 'Dirty bins are a breeding ground for bacteria and bad odours. Our bin cleaning service thoroughly cleans inside and out using hot water and deodorising agents.',
     bannerImg: '/gallery-4.png',
     included: [
@@ -113,14 +113,14 @@ export const services: ServiceData[] = [
       'Regular scheduled cleans available',
     ],
     stats: [
-      { value: 'From £5', label: 'Per Bin' },
+      { value: 'From Â£5', label: 'Per Bin' },
       { value: '5 mins', label: 'Per Bin' },
       { value: '100%', label: 'Satisfaction' },
     ],
     approach: 'Each bin is emptied, then thoroughly washed inside and out with hot water and a deodorising agent. The bin is left fresh, clean and ready to use.',
     faqs: [
-      { q: 'Do you do all types of bins?', a: 'Yes — we clean wheelie bins of all sizes including general waste, recycling and garden waste bins.' },
-      { q: 'Can I book a regular clean?', a: 'Absolutely — we offer monthly or fortnightly scheduled bin cleaning at a discounted rate.' },
+      { q: 'Do you do all types of bins?', a: 'Yes â€” we clean wheelie bins of all sizes including general waste, recycling and garden waste bins.' },
+      { q: 'Can I book a regular clean?', a: 'Absolutely â€” we offer monthly or fortnightly scheduled bin cleaning at a discounted rate.' },
     ],
   },
   {
@@ -129,7 +129,7 @@ export const services: ServiceData[] = [
     group: 'home',
     heroSubtitle: 'Message for Price',
     price: 'Message for price',
-    desc: 'Got something else that needs doing? We take on a wide range of odd jobs — just message for a price.',
+    desc: 'Got something else that needs doing? We take on a wide range of odd jobs â€” just message for a price.',
     details: 'We take on a variety of exterior cleaning and maintenance odd jobs. If you have something specific in mind, just get in touch and we can discuss it.',
     bannerImg: '/gallery-5.png',
     included: [
@@ -146,7 +146,7 @@ export const services: ServiceData[] = [
     ],
     approach: 'Just message or call us to describe the job. We will give you a fair, no-obligation quote and arrange a time that suits you.',
     faqs: [
-      { q: 'What kind of odd jobs do you take on?', a: 'Exterior cleaning tasks of most kinds — just ask and we will let you know if we can help.' },
+      { q: 'What kind of odd jobs do you take on?', a: 'Exterior cleaning tasks of most kinds â€” just ask and we will let you know if we can help.' },
       { q: 'How do I get a price?', a: 'Just send a message via the contact form or call 07555 653736 and we will get back to you quickly.' },
     ],
   },
@@ -158,265 +158,4 @@ export function getServicesByGroup(group: 'home' | 'business'): ServiceData[] {
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {
   return services.find((s) => s.slug === slug)
-}
-  // For Homes and Individuals
-  {
-    slug: 'home-office-storage-removals',
-    title: 'Home/Office/Storage Removals',
-    group: 'home',
-    heroSubtitle: 'Complete Removal Solutions',
-    desc: 'Professional removals for homes, offices, and storage units.',
-    details: 'Our comprehensive removal service covers every aspect of your move. Whether you need a complete property clearance or a targeted relocation, our skilled team delivers exceptional results that stand the test of time.\n\nWe work closely with you throughout the entire process — from initial consultation and planning through to final completion — ensuring the work meets your exact specifications and budget.',
-    img: '/service-icons/home-office.svg',
-    bannerImg: '/home-office-storage.png',
-    detailImg: '/home-office-detail.png',
-    included: [
-      'Full property packing and wrapping',
-      'Furniture disassembly and reassembly',
-      'Secure transit with GPS-tracked vehicles',
-      'Storage solutions available',
-      'End-to-end project coordination',
-      'Full insurance coverage',
-    ],
-    stats: [
-      { value: '500+', label: 'Moves Completed' },
-      { value: '98%', label: 'Client Satisfaction' },
-      { value: '10+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'Every removal we undertake begins with a detailed survey and honest conversation about what you want to achieve. Our project managers create a phased plan that minimises disruption to your home or business, with clear milestones and daily progress updates. We handle every sub-task — packing, wrapping, transport, and setup — under one coordinated team. You get a single point of contact from day one to the final check.',
-    faqs: [
-      { q: 'How long does a typical house move take?', a: 'Most standard house moves are completed in a single day. Larger properties may require 2 days. We\'ll confirm the timeline during your consultation.' },
-      { q: 'Do you provide packing materials?', a: 'Yes, we supply all necessary packing materials including boxes, bubble wrap, and protective covers at no extra charge.' },
-      { q: 'Are my belongings insured during transit?', a: 'Absolutely. All items are covered by our comprehensive goods-in-transit insurance policy.' },
-    ],
-  },
-  {
-    slug: 'end-of-tenancy-clearance',
-    title: 'End of Tenancy Clearance',
-    group: 'home',
-    heroSubtitle: 'Leave Your Property Spotless',
-    desc: 'Full clean-up, waste removal, and property checks.',
-    details: 'We leave your property spotless and ready for inspection. Our end of tenancy service includes deep cleaning, waste removal, and a final property check for complete peace of mind.\n\nOur team ensures every surface is cleaned, all waste is responsibly disposed of, and the property meets the highest standards for handover.',
-    img: '/service-icons/clearance.svg',
-    bannerImg: '/end-of-tenancy.png',
-    detailImg: '/end-of-tenancy-detail.png',
-    included: [
-      'Complete property deep clean',
-      'Waste removal and responsible disposal',
-      'Final property inspection walkthrough',
-      'Garden and outdoor area clearance',
-      'Appliance cleaning and descaling',
-      'Photo documentation of finished state',
-    ],
-    stats: [
-      { value: '300+', label: 'Properties Cleared' },
-      { value: '100%', label: 'Deposit Return Rate' },
-      { value: '5+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'Our clearance process starts with a property assessment to identify the scope of work. We create a detailed checklist covering every room and outdoor area, then execute the clearance and clean systematically. All waste is disposed of through licensed facilities, and we provide a handover walkthrough so you can be confident the property is inspection-ready.',
-    faqs: [
-      { q: 'How quickly can you complete a clearance?', a: 'Most standard properties can be cleared within 1-2 days depending on size and condition.' },
-      { q: 'Do you handle hazardous waste?', a: 'We can arrange specialist disposal for certain types of hazardous waste. Please let us know during the consultation.' },
-      { q: 'Can I be present during the clearance?', a: 'You\'re welcome to be present but it\'s not required. We can work with key handover arrangements.' },
-    ],
-  },
-  {
-    slug: 'student-accommodation-relocations',
-    title: 'Student Accommodation Relocations',
-    group: 'home',
-    heroSubtitle: 'Budget-Friendly Student Moves',
-    desc: 'Affordable, flexible moves for students.',
-    details: 'Special rates and flexible scheduling for students moving into or out of accommodation. Quick, efficient, and budget-friendly — designed around the academic calendar.\n\nWe understand student budgets and timelines. Our service is tailored to be as flexible and affordable as possible without compromising on care or reliability.',
-    img: '/service-icons/student.svg',
-    bannerImg: '/student-relocations.png',
-    detailImg: '/student-relocations-detail.png',
-    included: [
-      'Flexible booking around term dates',
-      'Budget-friendly pricing tiers',
-      'Shared load options to reduce costs',
-      'Temporary storage available',
-      'Packing assistance if needed',
-      'Same-day service available',
-    ],
-    stats: [
-      { value: '200+', label: 'Students Moved' },
-      { value: '98%', label: 'Client Satisfaction' },
-      { value: '5+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'We schedule student moves around key term dates and offer group booking discounts. Our team arrives on time, handles everything with care, and ensures you\'re settled into your new accommodation quickly.',
-    faqs: [
-      { q: 'Do you offer group discounts?', a: 'Yes, if multiple students are moving on the same day or route, we offer discounted shared-load pricing.' },
-      { q: 'Can you store items over summer?', a: 'We offer temporary storage solutions over holiday periods at competitive rates.' },
-      { q: 'How far in advance should I book?', a: 'We recommend booking 2-3 weeks ahead, especially around September and June when demand is high.' },
-    ],
-  },
-  {
-    slug: 'man-and-van',
-    title: 'Man & Van Collection/Delivery',
-    group: 'home',
-    heroSubtitle: 'Fast & Flexible Service',
-    desc: 'Hire a van and skilled mover for collection or delivery.',
-    details: 'Perfect for single items, small moves, or when you need an extra pair of hands. Our man and van service is fast, friendly, and fully insured.\n\nWhether it\'s a marketplace pickup, a furniture delivery, or a small flat move, we\'re ready to help at short notice.',
-    img: '/service-icons/man-van.svg',
-    bannerImg: '/man-and-van.png',
-    detailImg: '/man-and-van-detail.png',
-    included: [
-      'Single item or multi-item collection',
-      'Furniture assembly and disassembly',
-      'Same-day availability',
-      'Fully insured transit',
-      'Loading and unloading assistance',
-      'Flexible hourly or fixed-rate pricing',
-    ],
-    stats: [
-      { value: '1000+', label: 'Jobs Completed' },
-      { value: '99%', label: 'On-Time Rate' },
-      { value: '10+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'Simply tell us what needs moving and where. We\'ll dispatch a fully equipped van and experienced mover to handle the job. Most bookings can be accommodated within 24-48 hours.',
-    faqs: [
-      { q: 'Can I ride in the van?', a: 'Yes, one passenger can travel with the driver at no extra cost.' },
-      { q: 'What size van do you use?', a: 'We use a range of van sizes from SWB to Luton depending on the job. We\'ll recommend the right size for you.' },
-      { q: 'Is there a minimum charge?', a: 'We have a minimum 1-hour booking. After that, pricing is calculated in 30-minute increments.' },
-    ],
-  },
-  {
-    slug: 'self-drive-van-hire',
-    title: 'Self-Drive Van Hire',
-    group: 'home',
-    heroSubtitle: 'Drive It Yourself',
-    desc: 'Flexible van hire for DIY moves and tasks.',
-    details: 'Choose from a range of van sizes for your own DIY move or project — from small vans right up to Luton vans, all of automatic transmission. Flexible hire periods with competitive rates and comprehensive cover.\n\nAll our vans are well-maintained, clean, and come with breakdown cover included.',
-    img: '/service-icons/van-hire.svg',
-    bannerImg: '/self-drive-van.png',
-    detailImg: '/self-drive-van-detail.png',
-    included: [
-      'Small vans right up to Luton vans available',
-      'All vehicles are automatic transmission',
-      'Flexible hire periods (hourly/daily/weekly)',
-      'Breakdown cover included',
-      'Clean, well-maintained vehicles',
-      'Simple pickup and return process',
-      'Mileage options available',
-    ],
-    stats: [
-      { value: '400+', label: 'Hires Completed' },
-      { value: '98%', label: 'Client Satisfaction' },
-      { value: '5+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'Book online or by phone, collect the van from our depot, and return when you\'re done. We make the process as simple as possible with clear terms and competitive pricing.',
-    faqs: [
-      { q: 'What licence do I need?', a: 'A full UK driving licence held for at least 2 years is required. Drivers must be aged 21+.' },
-      { q: 'Is fuel included?', a: 'Vans are supplied with a full tank. Please return with a full tank to avoid refuelling charges.' },
-      { q: 'Can I take the van outside London?', a: 'Yes, our vans can be driven anywhere in the UK. Additional mileage charges may apply for long-distance trips.' },
-    ],
-  },
-
-  // For Businesses (B2B Solutions)
-  {
-    slug: 'office-warehouse-relocations',
-    title: 'Office & Warehouse Relocations',
-    group: 'business',
-    heroSubtitle: 'Minimal Downtime Relocations',
-    desc: 'Seamless relocations for offices and warehouses.',
-    details: 'Minimise downtime with our expert business relocation services. We handle everything from planning to execution, ensuring your operation is back up and running as quickly as possible.\n\nOur team understands the unique challenges of commercial moves and works around your schedule to reduce disruption.',
-    img: '/service-icons/office-warehouse.svg',
-    bannerImg: '/office-warehouse.png',
-    detailImg: '/office-warehouse-detail.png',
-    included: [
-      'Pre-move planning and coordination',
-      'IT equipment handling and setup',
-      'Furniture disassembly and reassembly',
-      'Weekend and out-of-hours moves available',
-      'Secure document handling',
-      'Full project management from start to finish',
-    ],
-    stats: [
-      { value: '100+', label: 'Businesses Relocated' },
-      { value: '98%', label: 'Client Satisfaction' },
-      { value: '10+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'Every business move starts with a detailed site survey and project plan. We assign a dedicated move coordinator who manages the timeline, communication, and quality control. Our goal is to get you operational in your new space with zero data loss and minimal downtime.',
-    faqs: [
-      { q: 'Can you move us over a weekend?', a: 'Absolutely. Weekend and bank holiday moves are available to minimise business disruption.' },
-      { q: 'How do you handle sensitive documents?', a: 'We use sealed, labelled crates and can provide chain-of-custody documentation if required.' },
-      { q: 'Do you handle IT equipment?', a: 'Yes, our team is trained in safe handling of servers, workstations, and networking equipment.' },
-    ],
-  },
-  {
-    slug: 'construction-site-logistics',
-    title: 'Construction Site Logistics',
-    group: 'business',
-    heroSubtitle: 'Specialist Site Support',
-    desc: 'Transport of heavy machinery, tools, and materials.',
-    details: 'Specialist logistics for construction sites, including delivery and removal of equipment, tools, and materials. We understand the demands of site work and deliver reliable, on-time service.\n\nFrom initial material delivery to final site clearance, our team keeps your project on schedule.',
-    img: '/service-icons/construction.svg',
-    bannerImg: '/construction-logistics.png',
-    detailImg: '/construction-logistics-detail.png',
-    included: [
-      'Heavy machinery transport',
-      'Building materials delivery',
-      'Site waste clearance',
-      'Tool and equipment logistics',
-      'Timed deliveries to match schedule',
-      'Full insurance for high-value items',
-    ],
-    stats: [
-      { value: '150+', label: 'Sites Served' },
-      { value: '99%', label: 'On-Time Delivery' },
-      { value: '10+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'We work with your site manager to schedule deliveries around the build programme. Our drivers are experienced with restricted-access sites and understand the importance of punctuality in construction.',
-    faqs: [
-      { q: 'Can you handle HIAB/crane deliveries?', a: 'Yes, we have access to HIAB-equipped vehicles for heavy or awkward items.' },
-      { q: 'Do you offer regular scheduled deliveries?', a: 'We can set up recurring delivery schedules to keep your site supplied throughout the project.' },
-      { q: 'What areas do you cover?', a: 'We cover London and the wider South East, with nationwide options available on request.' },
-    ],
-  },
-  {
-    slug: 'on-demand-breezyeers',
-    title: 'On-Demand Breezyeers',
-    group: 'business',
-    heroSubtitle: 'Flexible Workforce Solutions',
-    desc: 'Hire skilled teams for loading, packing, or labour-intensive tasks.',
-    details: 'Flexible, skilled teams available for short-term or project-based support. Ideal for loading, packing, or any labour-intensive business needs.\n\nOur Breezyeers are trained, safety-certified, and ready to integrate seamlessly into your team.',
-    img: '/service-icons/breezyeers.svg',
-    bannerImg: '/on-demand-breezyeers.png',
-    detailImg: '/on-demand-breezyeers-detail.png',
-    included: [
-      'Trained and safety-certified workers',
-      'Flexible booking (hourly/daily/weekly)',
-      'Loading and unloading teams',
-      'Packing and sorting services',
-      'Event setup and breakdown',
-      'Full liability insurance',
-    ],
-    stats: [
-      { value: '200+', label: 'Projects Supported' },
-      { value: '99%', label: 'Client Satisfaction' },
-      { value: '5+', label: 'Years Experience' },
-      { value: '100%', label: 'Fully Insured' },
-    ],
-    approach: 'Tell us when, where, and what you need. We\'ll deploy a team of trained Breezyeers who arrive on time, work efficiently, and follow your site protocols. It\'s reliable labour without the overhead.',
-    faqs: [
-      { q: 'How quickly can you deploy a team?', a: 'In most cases we can have a team on-site within 24-48 hours of booking.' },
-      { q: 'What training do your workers have?', a: 'All Breezyeers complete manual handling, health & safety, and customer service training before deployment.' },
-      { q: 'Can I book the same team regularly?', a: 'Yes, we can assign consistent team members for recurring bookings so they become familiar with your operations.' },
-    ],
-  },
-];
-
-export function getServicesByGroup(group: 'home' | 'business'): ServiceData[] {
-  return services.filter((s) => s.group === group);
-}
-
-export function getServiceBySlug(slug: string): ServiceData | undefined {
-  return services.find((s) => s.slug === slug);
 }
