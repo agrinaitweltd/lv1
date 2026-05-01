@@ -120,16 +120,12 @@ export default function Hero() {
           muted
           playsInline
           preload="auto"
-          poster="/gallery-1.png"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
         <div className="hero__overlay" />
       </div>
       <div className="container hero__inner">
         <div className="hero__content">
-          <div className="hero__logo-wrap">
-            <img src="/logo.png" alt="LV Exterior Cleaning" className="hero__brand-logo" />
-          </div>
           <p className="hero__slogan">Teenage Owned Business</p>
           <h1 className="hero__title">
             LV Exterior{' '}

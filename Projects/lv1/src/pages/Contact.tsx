@@ -118,7 +118,6 @@ export default function Contact() {
       />
       <section className="contact-hero">
         <div className="contact-hero__bg">
-          <img src="/contact-banner.png" alt="" />
           <div className="contact-hero__overlay" />
         </div>
         <div className="container">

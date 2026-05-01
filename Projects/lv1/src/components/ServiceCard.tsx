@@ -3,20 +3,15 @@ import './ServiceCard.css'
 
 interface ServiceCardProps {
   title: string
-  img?: string
   desc: string
   slug: string
 }
 
-export default function ServiceCard({ title, img, desc, slug }: ServiceCardProps) {
+export default function ServiceCard({ title, desc, slug }: ServiceCardProps) {
   return (
     <Link to={`/services/${slug}`} className="service-card">
       <div className="service-card__icon-wrap">
-        {img ? (
-          <img src={img} alt={title} className="service-card__icon" loading="lazy" />
-        ) : (
-          <div className="service-card__icon-placeholder" />
-        )}
+        <div className="service-card__icon-placeholder" />
       </div>
       <div className="service-card__body">
         <h3 className="service-card__title">{title}</h3>

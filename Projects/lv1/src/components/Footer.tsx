@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__col">
-            <img src="/logo.png" alt="LV Exterior Cleaning" className="footer__logo" />
+            <div className="footer__logo">LV Exterior Cleaning</div>
             <p className="footer__desc">
               Teenage-owned exterior cleaning business. Affordable, reliable, and professional results for driveways, patios, fences and bins.
             </p>

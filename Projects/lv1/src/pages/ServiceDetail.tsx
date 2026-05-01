@@ -29,12 +29,9 @@ export default function ServiceDetail() {
       />
       {/* Hero Banner */}
       <section className="sd-hero">
-        {service.bannerImg && (
-          <div className="sd-hero__bg">
-            <img src={service.bannerImg} alt={service.title} />
-            <div className="sd-hero__overlay" />
-          </div>
-        )}
+        <div className="sd-hero__bg">
+          <div className="sd-hero__overlay" />
+        </div>
         <div className="container sd-hero__inner">
           <Link to="/services" className="sd-hero__back">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -60,11 +57,7 @@ export default function ServiceDetail() {
       {/* About This Service */}
       <section className="section sd-about" ref={aboutRef}>
         <div className="container sd-about__grid">
-          <div className="sd-about__image slide-in-left">
-            {service.bannerImg && (
-              <img src={service.bannerImg} alt={service.title} />
-            )}
-          </div>
+          <div className="sd-about__image slide-in-left" aria-hidden="true" />
           <div className="sd-about__content slide-in-right">
             <span className="sd-about__eyebrow fade-in">About This Service</span>
             <h2 className="sd-about__title fade-in">{service.heroSubtitle}</h2>
@@ -149,9 +142,6 @@ export default function ServiceDetail() {
           <div className="sd-other__grid stagger-children">
             {otherServices.map((s) => (
               <Link to={`/services/${s.slug}`} className="sd-other__card" key={s.slug}>
-                <div className="sd-other__card-img">
-                  {s.bannerImg && <img src={s.bannerImg} alt={s.title} loading="lazy" />}
-                </div>
                 <div className="sd-other__card-body">
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>

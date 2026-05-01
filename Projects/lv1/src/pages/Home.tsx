@@ -120,9 +120,6 @@ export default function Home() {
           <div className="home-services__grid stagger-children">
             {services.map((s) => (
               <div className="home-svc-card" key={s.slug}>
-                <div className="home-svc-card__img">
-                  {s.bannerImg && <img src={s.bannerImg} alt={s.title} loading="lazy" />}
-                </div>
                 <div className="home-svc-card__body">
                   <div className="home-svc-card__price-badge">{s.price}</div>
                   <h3>{s.title}</h3>
@@ -145,9 +142,7 @@ export default function Home() {
       {/* ===== About ===== */}
       <section className="section home-about-breezyee" ref={aboutRef} id="about">
         <div className="container home-about-breezyee__inner">
-          <div className="home-about-breezyee__image slide-in-left">
-            <img src="/gallery-1.png" alt="LV Exterior Cleaning at work" />
-          </div>
+          <div className="home-about-breezyee__image slide-in-left" aria-hidden="true" />
           <div className="home-about-breezyee__content slide-in-right">
             <span className="home-about-breezyee__eyebrow">About Us</span>
             <h2 className="home-about-breezyee__title">LV Exterior Cleaning</h2>
@@ -167,9 +162,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="home-about-breezyee__logo-row">
-              <img src="/logo.png" alt="LV Exterior Cleaning" className="home-about-breezyee__logo-badge" />
-            </div>
+            <div className="home-about-breezyee__logo-row">LV Exterior Cleaning</div>
             <a
               href="#contact"
               className="btn btn-primary fade-in"

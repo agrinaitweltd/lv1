@@ -25,7 +25,6 @@ export default function Services() {
       />
       <section className="services-hero" ref={heroRef}>
         <div className="services-hero__bg">
-          <img src="/services-banner.png" alt="" />
           <div className="services-hero__overlay" />
         </div>
         <div className="container">
@@ -50,9 +49,6 @@ export default function Services() {
           <div className="services-card-grid stagger-children">
             {services.map((s) => (
               <Link to={`/services/${s.slug}`} className="svc-card" key={s.slug}>
-                <div className="svc-card__img">
-                  {s.bannerImg && <img src={s.bannerImg} alt={s.title} loading="lazy" />}
-                </div>
                 <div className="svc-card__body">
                   <h3 className="svc-card__title">{s.title}</h3>
                   <p className="svc-card__desc">{s.desc}</p>

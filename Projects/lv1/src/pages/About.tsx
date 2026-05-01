@@ -32,7 +32,6 @@ export default function About() {
       {/* Hero Banner */}
       <section className="about-hero">
         <div className="about-hero__bg">
-          <img src="/about-banner.png" alt="" />
           <div className="about-hero__overlay" />
         </div>
         <div className="container about-hero__inner">
@@ -70,9 +69,7 @@ export default function About() {
             </p>
             <p>That's our story. Welcome to Breezyee Moves.</p>
           </div>
-          <div className="about-story__image slide-in-right">
-            <img src="/about-story.png" alt="Our team at work" />
-          </div>
+          <div className="about-story__image slide-in-right" aria-hidden="true" />
         </div>
       </section>
 
@@ -106,23 +103,8 @@ export default function About() {
             <h2 className="section-title fade-in">See Us In Action</h2>
           </div>
           <div className="about-gallery__grid stagger-children">
-            <div className="about-gallery__item about-gallery__item--tall">
-              <img src="/gallery-1.png" alt="Breezyee team loading" />
-            </div>
-            <div className="about-gallery__item">
-              <img src="/gallery-2.png" alt="Packed and ready" />
-            </div>
-            <div className="about-gallery__item">
-              <img src="/gallery-3.png" alt="Safe delivery" />
-            </div>
             <div className="about-gallery__item about-gallery__item--wide">
-              <img src="/gallery-4.png" alt="Community projects" />
-            </div>
-            <div className="about-gallery__item">
-              <img src="/gallery-5.png" alt="Warehouse logistics" />
-            </div>
-            <div className="about-gallery__item">
-              <img src="/gallery6.png" alt="Happy customers" />
+              <p>Image gallery has been removed.</p>
             </div>
           </div>
         </div>

@@ -6,8 +6,6 @@
   details: string;
   heroSubtitle: string;
   price: string;
-  img?: string;
-  bannerImg?: string;
   included: string[];
   stats: { value: string; label: string }[];
   approach: string;
@@ -23,7 +21,6 @@ export const services: ServiceData[] = [
     price: 'From Â£60',
     desc: 'High-pressure cleaning that removes oil, moss, algae and years of built-up grime â€” restoring your driveway to its best.',
     details: 'Our driveway pressure washing service uses professional-grade equipment to blast away years of built-up dirt, oil stains, moss, algae and grime.',
-    bannerImg: '/gallery-1.png',
     included: [
       'High-pressure hot water treatment',
       'Moss & algae removal',
@@ -50,7 +47,6 @@ export const services: ServiceData[] = [
     price: 'From Â£40',
     desc: 'Bring weathered fences and walls back to life with our thorough pressure washing service â€” removing green algae, mould and discolouration.',
     details: 'Fences and walls are constantly exposed to the elements, leading to green algae, mould and general discolouration. Our service removes all of this, restoring the original appearance.',
-    bannerImg: '/gallery-2.png',
     included: [
       'Soft or pressure wash depending on surface',
       'Green algae & mould removal',
@@ -77,7 +73,6 @@ export const services: ServiceData[] = [
     price: 'From Â£40',
     desc: 'Transform your patio with a thorough pressure wash â€” removing moss, stubborn stains and discolouration from slabs and outdoor areas.',
     details: 'Patios can quickly become slippery and unsightly with moss, algae and staining. Our professional pressure washing restores them to a clean, safe condition.',
-    bannerImg: '/gallery-3.png',
     included: [
       'High-pressure slab cleaning',
       'Weed removal between slabs',
@@ -104,7 +99,6 @@ export const services: ServiceData[] = [
     price: 'From Â£5 per bin',
     desc: 'Keep your bins hygienic and odour-free with our professional bin cleaning service â€” inside and out, from just Â£5 per bin.',
     details: 'Dirty bins are a breeding ground for bacteria and bad odours. Our bin cleaning service thoroughly cleans inside and out using hot water and deodorising agents.',
-    bannerImg: '/gallery-4.png',
     included: [
       'Inside & outside bin clean',
       'High-pressure hot water wash',
@@ -131,7 +125,6 @@ export const services: ServiceData[] = [
     price: 'Message for price',
     desc: 'Got something else that needs doing? We take on a wide range of odd jobs â€” just message for a price.',
     details: 'We take on a variety of exterior cleaning and maintenance odd jobs. If you have something specific in mind, just get in touch and we can discuss it.',
-    bannerImg: '/gallery-5.png',
     included: [
       'General exterior cleaning tasks',
       'Guttering & fascia wash-down',
