@@ -61,8 +61,8 @@ export default function ServiceDetail() {
       <section className="section sd-about" ref={aboutRef}>
         <div className="container sd-about__grid">
           <div className="sd-about__image slide-in-left">
-            {service.detailImg && (
-              <img src={service.detailImg} alt={service.title} />
+            {service.bannerImg && (
+              <img src={service.bannerImg} alt={service.title} />
             )}
           </div>
           <div className="sd-about__content slide-in-right">
