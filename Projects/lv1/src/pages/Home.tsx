@@ -1,4 +1,4 @@
-﻿import { useState, useRef, type FormEvent } from 'react'
+import { useState, useRef, type FormEvent } from 'react'
 import { useInView } from '../hooks/useInView'
 import Hero from '../components/Hero'
 import { services } from '../data/services'
@@ -6,14 +6,14 @@ import Seo from '../components/Seo'
 import './Home.css'
 
 const whyUs = [
-  { title: 'Affordable Pricing', desc: 'Transparent, competitive rates with no hidden fees. Starting from just Â£5 per bin and Â£40 for patios.' },
+  { title: 'Affordable Pricing', desc: 'Transparent, competitive rates with no hidden fees. Starting from just £5 per bin and £40 for patios.' },
   { title: 'Teenage Owned Business', desc: 'Supporting local youth enterprise. Every booking helps a young entrepreneur build something great.' },
   { title: 'Reliable & Punctual', desc: 'We show up on time, work hard, and deliver results you can see. No shortcuts.' },
   { title: 'Free No-Obligation Quotes', desc: 'Just message or call and we will get back to you quickly with a fair price.' },
 ]
 
 const steps = [
-  { num: '01', title: 'Message for a Quote', desc: 'Tell us what you need and get a free, no-obligation quote quickly â€” usually within a few hours.' },
+  { num: '01', title: 'Message for a Quote', desc: 'Tell us what you need and get a free, no-obligation quote quickly — usually within a few hours.' },
   { num: '02', title: 'We Arrange a Visit', desc: 'We schedule a time that suits you and arrive fully equipped and ready to work.' },
   { num: '03', title: 'Sit Back & Enjoy', desc: 'Watch your driveway, patio or bins transform. We tidy up and leave everything spotless.' },
 ]
@@ -25,7 +25,7 @@ const aboutFeatures = [
 ]
 
 const testimonials = [
-  { name: 'Mark R.', location: 'Local Customer', text: 'My driveway looks brand new! Couldn\'t believe the difference â€” all the oil stains and moss completely gone. Great job and very reasonable price.', rating: 5 },
+  { name: 'Mark R.', location: 'Local Customer', text: 'My driveway looks brand new! Couldn\'t believe the difference — all the oil stains and moss completely gone. Great job and very reasonable price.', rating: 5 },
   { name: 'Julie S.', location: 'Local Customer', text: 'Had my patio and bins done. Excellent results and a really friendly, hard-working young lad. Will definitely be booking again.', rating: 5 },
   { name: 'Dave T.', location: 'Local Customer', text: 'Fence looked awful with green algae. Messaged for a quote, got a quick reply, and within a few days it was done. Looks fantastic. Highly recommend.', rating: 5 },
 ]
@@ -35,25 +35,25 @@ const cleaningCategories = [
     icon: 'driveway',
     title: 'Driveway Washing',
     desc: 'Restore your driveway to a like-new condition. Oil, moss and grime removed with high-pressure cleaning.',
-    price: 'From Â£60',
+    price: 'From £60',
   },
   {
     icon: 'patio',
     title: 'Patio Cleaning',
     desc: 'Blast away moss, algae and stains from patio slabs. Safe for all outdoor surfaces.',
-    price: 'From Â£40',
+    price: 'From £40',
   },
   {
     icon: 'fence',
     title: 'Fence & Wall Washing',
     desc: 'Rejuvenate weathered fences and walls. Green algae and mould removed completely.',
-    price: 'From Â£40',
+    price: 'From £40',
   },
   {
     icon: 'bin',
     title: 'Bin Cleaning',
     desc: 'Hygienic bin cleaning inside and out. Fresh, odour-free results every time.',
-    price: 'From Â£5/bin',
+    price: 'From £5/bin',
   },
 ]
 
@@ -103,8 +103,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="LV Exterior Cleaning â€“ Exterior Cleaning Services"
-        description="LV Exterior Cleaning â€” teenage-owned exterior cleaning business. Driveways, patios, fences, bin cleaning and more. Message for a FREE quote: 07555 653736."
+        title="LV Exterior Cleaning – Exterior Cleaning Services"
+        description="LV Exterior Cleaning — teenage-owned exterior cleaning business. Driveways, patios, fences, bin cleaning and more. Message for a FREE quote: 07555 653736."
         canonical="/"
       />
       <Hero />
@@ -115,7 +115,7 @@ export default function Home() {
           <span className="section-eyebrow fade-in">What We Offer</span>
           <h2 className="section-title fade-in">Cleaning Services</h2>
           <p className="section-subtitle fade-in">
-            From driveways to dustbins â€” we provide reliable, affordable exterior cleaning that makes your property shine.
+            From driveways to dustbins — we provide reliable, affordable exterior cleaning that makes your property shine.
           </p>
           <div className="home-services__grid stagger-children">
             {services.map((s) => (
@@ -147,7 +147,7 @@ export default function Home() {
             <span className="home-about-breezyee__eyebrow">About Us</span>
             <h2 className="home-about-breezyee__title">LV Exterior Cleaning</h2>
             <p className="home-about-breezyee__text">
-              LV Exterior Cleaning is a teenage-owned business providing reliable, affordable, and high-quality exterior cleaning services. We take pride in transforming outdoor spaces and delivering great results â€” one driveway, patio or fence at a time.
+              LV Exterior Cleaning is a teenage-owned business providing reliable, affordable, and high-quality exterior cleaning services. We take pride in transforming outdoor spaces and delivering great results — one driveway, patio or fence at a time.
             </p>
             <div className="home-about-breezyee__features stagger-children">
               {aboutFeatures.map((f) => (
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="container">
           <span className="home-helped__eyebrow fade-in">Our Specialities</span>
           <h2 className="home-helped__title fade-in">
-            Everything your property needs â€” <span className="home-helped__count">cleaned</span>
+            Everything your property needs — <span className="home-helped__count">cleaned</span>
           </h2>
           <p className="home-helped__subtitle fade-in">
             From driveways to dustbins, we cover all aspects of exterior cleaning with professional-grade equipment.
@@ -264,7 +264,7 @@ export default function Home() {
           <span className="section-eyebrow fade-in">Reviews</span>
           <h2 className="section-title fade-in">What Our Customers Say</h2>
           <p className="section-subtitle fade-in">
-            Don't just take our word for it â€” hear from people we've helped.
+            Don't just take our word for it — hear from people we've helped.
           </p>
           <div className="testimonials-grid stagger-children">
             {testimonials.map((t) => (
@@ -320,12 +320,12 @@ export default function Home() {
                       id="contact-message"
                       name="contact-message"
                       rows={4}
-                      placeholder="E.g. driveway about 40mÂ², patio, and 2 bins..."
+                      placeholder="E.g. driveway about 40m², patio, and 2 bins..."
                     />
                   </div>
                   {submitError && <p className="home-contact__error">{submitError}</p>}
                   <button type="submit" className="btn btn-primary home-contact__submit" disabled={submitting}>
-                    {submitting ? 'Sendingâ€¦' : 'Send Message'}
+                    {submitting ? 'Sending…' : 'Send Message'}
                     {!submitting && (
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     )}
@@ -347,10 +347,10 @@ export default function Home() {
               <div className="home-contact__info-card">
                 <h3>Services &amp; Prices</h3>
                 <ul className="home-contact__price-list">
-                  <li><span>Driveway Pressure Washing</span><strong>From Â£60</strong></li>
-                  <li><span>Patio Pressure Washing</span><strong>From Â£40</strong></li>
-                  <li><span>Fence / Wall Washing</span><strong>From Â£40</strong></li>
-                  <li><span>Bin Cleaning</span><strong>From Â£5/bin</strong></li>
+                  <li><span>Driveway Pressure Washing</span><strong>From £60</strong></li>
+                  <li><span>Patio Pressure Washing</span><strong>From £40</strong></li>
+                  <li><span>Fence / Wall Washing</span><strong>From £40</strong></li>
+                  <li><span>Bin Cleaning</span><strong>From £5/bin</strong></li>
                   <li><span>Other Odd Jobs</span><strong>Message for price</strong></li>
                 </ul>
               </div>
@@ -361,3 +361,4 @@ export default function Home() {
     </>
   )
 }
+

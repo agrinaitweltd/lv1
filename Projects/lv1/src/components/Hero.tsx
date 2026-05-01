@@ -67,7 +67,7 @@ export default function Hero() {
   useEffect(() => {
     const onScroll = () => {
       if (bgRef.current) {
-        bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.35}px, 0)`
+        bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.2}px, 0)`
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -112,16 +112,10 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero__bg" ref={bgRef}>
-        <video
-          className="hero__video"
-          src="/vid.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
+        <div className="hero__bg-gradient" aria-hidden="true" />
+        <div className="hero__orb hero__orb--one" aria-hidden="true" />
+        <div className="hero__orb hero__orb--two" aria-hidden="true" />
+        <div className="hero__grid" aria-hidden="true" />
         <div className="hero__overlay" />
       </div>
       <div className="container hero__inner">
