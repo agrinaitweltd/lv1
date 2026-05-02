@@ -18,12 +18,6 @@ const steps = [
   { num: '03', title: 'Sit Back & Enjoy', desc: 'Watch your driveway, patio or bins transform. We tidy up and leave everything spotless.' },
 ]
 
-const aboutFeatures = [
-  { title: 'Affordable Prices', desc: 'Quality results without breaking the bank.' },
-  { title: 'Reliable Service', desc: 'We show up on time and deliver what we promise.' },
-  { title: 'Free Quotes', desc: 'Message any time for a no-obligation price.' },
-]
-
 const testimonials = [
   { name: 'Mark R.', location: 'Local Customer', text: 'My driveway looks brand new! Couldn\'t believe the difference — all the oil stains and moss completely gone. Great job and very reasonable price.', rating: 5 },
   { name: 'Julie S.', location: 'Local Customer', text: 'Had my patio and bins done. Excellent results and a really friendly, hard-working young lad. Will definitely be booking again.', rating: 5 },
@@ -32,7 +26,6 @@ const testimonials = [
 
 export default function Home() {
   const servicesRef = useInView<HTMLElement>()
-  const aboutRef = useInView<HTMLElement>()
   const journeyRef = useInView<HTMLElement>()
   const testimonialsRef = useInView<HTMLElement>()
   const contactRef = useInView<HTMLElement>()
@@ -106,41 +99,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== About ===== */}
-      <section className="section home-about-breezyee" ref={aboutRef} id="about">
-        <div className="container home-about-breezyee__inner">
-          <div className="home-about-breezyee__image slide-in-left float-anim" aria-hidden="true" />
-          <div className="home-about-breezyee__content slide-in-right">
-            <span className="home-about-breezyee__eyebrow">About Us</span>
-            <h2 className="home-about-breezyee__title">LV Exterior Cleaning</h2>
-            <p className="home-about-breezyee__text">
-              LV Exterior Cleaning is a teenage-owned business providing reliable, affordable, and high-quality exterior cleaning services. We take pride in transforming outdoor spaces and delivering great results — one driveway, patio or fence at a time.
-            </p>
-            <div className="home-about-breezyee__features stagger-children">
-              {aboutFeatures.map((f) => (
-                <div className="home-about-breezyee__feature fade-in" key={f.title}>
-                  <div className="home-about-breezyee__feature-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <div>
-                    <strong>{f.title}</strong>
-                    <p>{f.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="home-about-breezyee__logo-row">LV Exterior Cleaning</div>
-            <a
-              href="#contact"
-              className="btn btn-primary fade-in"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
-            >
-              Message for a Free Quote
-            </a>
           </div>
         </div>
       </section>
@@ -243,7 +201,7 @@ export default function Home() {
                     <textarea
                       id="contact-message"
                       name="contact-message"
-                      rows={4}
+                      rows={3}
                       placeholder="E.g. driveway about 40m², patio, and 2 bins..."
                     />
                   </div>

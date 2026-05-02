@@ -1,10 +1,10 @@
 .hero {
   position: relative;
-  min-height: 82vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 88px;
+  padding-top: 80px;
 }
 
 .hero__bg {
@@ -80,8 +80,8 @@
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 120px 0 84px;
-  min-height: calc(82vh - 88px);
+  padding: 80px 0 56px;
+  min-height: calc(70vh - 80px);
 }
 
 .hero__content {
@@ -287,7 +287,7 @@
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .hero__stats-inner {
@@ -330,7 +330,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 90vh;
+    min-height: 75vh;
   }
 
   .hero__inner {
