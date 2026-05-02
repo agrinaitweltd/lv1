@@ -119,7 +119,7 @@ export default function Home() {
           </p>
           <div className="home-services__grid stagger-children">
             {services.map((s) => (
-              <div className="home-svc-card" key={s.slug}>
+              <div className="home-svc-card zoom-pop" key={s.slug}>
                 <div className="home-svc-card__body">
                   <div className="home-svc-card__price-badge">{s.price}</div>
                   <h3>{s.title}</h3>
@@ -142,7 +142,7 @@ export default function Home() {
       {/* ===== About ===== */}
       <section className="section home-about-breezyee" ref={aboutRef} id="about">
         <div className="container home-about-breezyee__inner">
-          <div className="home-about-breezyee__image slide-in-left" aria-hidden="true" />
+          <div className="home-about-breezyee__image slide-in-left float-anim" aria-hidden="true" />
           <div className="home-about-breezyee__content slide-in-right">
             <span className="home-about-breezyee__eyebrow">About Us</span>
             <h2 className="home-about-breezyee__title">LV Exterior Cleaning</h2>
@@ -151,7 +151,7 @@ export default function Home() {
             </p>
             <div className="home-about-breezyee__features stagger-children">
               {aboutFeatures.map((f) => (
-                <div className="home-about-breezyee__feature" key={f.title}>
+                <div className="home-about-breezyee__feature fade-in" key={f.title}>
                   <div className="home-about-breezyee__feature-icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
@@ -184,7 +184,7 @@ export default function Home() {
           </p>
           <div className="why-grid stagger-children">
             {whyUs.map((item, i) => (
-              <div className="why-card" key={item.title}>
+              <div className="why-card flip-in-left" key={item.title}>
                 <span className="why-card__num">0{i + 1}</span>
                 <h3 className="why-card__title">{item.title}</h3>
                 <p className="why-card__desc">{item.desc}</p>
@@ -204,7 +204,7 @@ export default function Home() {
           </p>
           <div className="steps-grid stagger-children">
             {steps.map((step) => (
-              <div className="step-card" key={step.num}>
+              <div className="step-card slide-in-up" key={step.num}>
                 <span className="step-card__num">{step.num}</span>
                 <h3 className="step-card__title">{step.title}</h3>
                 <p className="step-card__desc">{step.desc}</p>
@@ -226,7 +226,7 @@ export default function Home() {
           </p>
           <div className="home-helped__grid stagger-children">
             {cleaningCategories.map((cat) => (
-              <div className="home-helped__card" key={cat.title}>
+              <div className="home-helped__card slide-in-bottom" key={cat.title}>
                 <div className="home-helped__card-icon">
                   {cat.icon === 'driveway' && (
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
@@ -268,7 +268,7 @@ export default function Home() {
           </p>
           <div className="testimonials-grid stagger-children">
             {testimonials.map((t) => (
-              <div className="testimonial-card" key={t.name}>
+              <div className="testimonial-card rotate-in" key={t.name}>
                 <div className="testimonial-card__stars">
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <svg key={j} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
