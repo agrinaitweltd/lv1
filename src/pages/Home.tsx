@@ -5,19 +5,6 @@ import { services } from '../data/services'
 import Seo from '../components/Seo'
 import './Home.css'
 
-const whyUs = [
-  { title: 'Affordable Pricing', desc: 'Transparent, competitive rates with no hidden fees. Starting from just £5 per bin and £40 for patios.' },
-  { title: 'Teenage Owned Business', desc: 'Supporting local youth enterprise. Every booking helps a young entrepreneur build something great.' },
-  { title: 'Reliable & Punctual', desc: 'We show up on time, work hard, and deliver results you can see. No shortcuts.' },
-  { title: 'Free No-Obligation Quotes', desc: 'Just message or call and we will get back to you quickly with a fair price.' },
-]
-
-const steps = [
-  { num: '01', title: 'Message for a Quote', desc: 'Tell us what you need and get a free, no-obligation quote quickly — usually within a few hours.' },
-  { num: '02', title: 'We Arrange a Visit', desc: 'We schedule a time that suits you and arrive fully equipped and ready to work.' },
-  { num: '03', title: 'Sit Back & Enjoy', desc: 'Watch your driveway, patio or bins transform. We tidy up and leave everything spotless.' },
-]
-
 const testimonials = [
   { name: 'Mark R.', location: 'Local Customer', text: 'My driveway looks brand new! Couldn\'t believe the difference — all the oil stains and moss completely gone. Great job and very reasonable price.', rating: 5 },
   { name: 'Julie S.', location: 'Local Customer', text: 'Had my patio and bins done. Excellent results and a really friendly, hard-working young lad. Will definitely be booking again.', rating: 5 },
@@ -26,7 +13,6 @@ const testimonials = [
 
 export default function Home() {
   const servicesRef = useInView<HTMLElement>()
-  const journeyRef = useInView<HTMLElement>()
   const testimonialsRef = useInView<HTMLElement>()
   const contactRef = useInView<HTMLElement>()
 
@@ -78,9 +64,6 @@ export default function Home() {
         <div className="container">
           <span className="section-eyebrow fade-in">What We Offer</span>
           <h2 className="section-title fade-in">Cleaning Services</h2>
-          <p className="section-subtitle fade-in">
-            From driveways to dustbins — we provide reliable, affordable exterior cleaning that makes your property shine.
-          </p>
           <div className="home-services__grid stagger-children">
             {services.map((s) => (
               <div className="home-svc-card zoom-pop" key={s.slug}>
@@ -103,51 +86,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Why + How ===== */}
-      <section className="section home-journey" ref={journeyRef}>
-        <div className="container">
-          <span className="section-eyebrow fade-in">Why Choose Us</span>
-          <h2 className="section-title fade-in">The standard you deserve, made simple</h2>
-          <p className="section-subtitle fade-in">
-            High standards, clear process, and reliable results every time.
-          </p>
-          <div className="home-journey__layout">
-            <div className="home-journey__panel home-journey__panel--why stagger-children">
-              <h3 className="home-journey__panel-title fade-in">Why People Book LV</h3>
-              <div className="why-grid">
-                {whyUs.map((item, i) => (
-                  <div className="why-card flip-in-left" key={item.title}>
-                    <span className="why-card__num">0{i + 1}</span>
-                    <h4 className="why-card__title">{item.title}</h4>
-                    <p className="why-card__desc">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="home-journey__panel home-journey__panel--steps stagger-children">
-              <h3 className="home-journey__panel-title fade-in">How It Works</h3>
-              <div className="steps-grid">
-                {steps.map((step) => (
-                  <div className="step-card slide-in-up" key={step.num}>
-                    <span className="step-card__num">{step.num}</span>
-                    <h4 className="step-card__title">{step.title}</h4>
-                    <p className="step-card__desc">{step.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== Testimonials ===== */}
       <section className="section home-testimonials" ref={testimonialsRef}>
         <div className="container">
           <span className="section-eyebrow fade-in">Reviews</span>
           <h2 className="section-title fade-in">What Our Customers Say</h2>
-          <p className="section-subtitle fade-in">
-            Don't just take our word for it — hear from people we've helped.
-          </p>
           <div className="testimonials-grid stagger-children">
             {testimonials.map((t) => (
               <div className="testimonial-card rotate-in" key={t.name}>
@@ -172,9 +115,6 @@ export default function Home() {
         <div className="container">
           <span className="section-eyebrow fade-in">Get In Touch</span>
           <h2 className="section-title fade-in">Message Me for a FREE Quote</h2>
-          <p className="section-subtitle fade-in">
-            Tell me what needs cleaning and I'll get back to you with a free, no-obligation quote.
-          </p>
           <div className="home-contact__grid">
             {/* Form */}
             <div className="home-contact__form-wrap slide-in-left">
