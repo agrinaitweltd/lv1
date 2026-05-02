@@ -1,0 +1,484 @@
+/* ========== Service Detail Hero ========== */
+.sd-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #111;
+}
+
+.sd-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sd-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sd-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.45) 100%);
+}
+
+.sd-hero__inner {
+  position: relative;
+  z-index: 2;
+  padding: 120px 0 48px;
+  color: var(--white);
+}
+
+.sd-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+  transition: color 0.25s ease;
+}
+
+.sd-hero__back:hover {
+  color: var(--white);
+}
+
+.sd-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.sd-hero__subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ========== Stats Bar ========== */
+.sd-stats {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+.sd-stats__inner {
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.sd-stat {
+  text-align: center;
+  min-width: 120px;
+}
+
+.sd-stat__value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.sd-stat__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+}
+
+/* ========== About This Service ========== */
+.sd-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.sd-about__image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.sd-about__image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.sd-about__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.sd-about__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.sd-about__content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* What's Included */
+.sd-included {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.sd-included h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.sd-included ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sd-included li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.sd-included li svg {
+  flex-shrink: 0;
+}
+
+.sd-about__cta {
+  margin-top: 8px;
+}
+
+/* ========== Approach Section ========== */
+.sd-approach {
+  background: var(--bg);
+}
+
+.sd-approach__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.sd-approach__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.sd-approach__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.sd-approach__content p {
+  color: var(--text-light);
+  line-height: 1.85;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.sd-approach__cta {
+  display: inline-flex;
+}
+
+/* ========== FAQ ========== */
+.sd-faq {
+  background: var(--white);
+}
+
+.sd-faq__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.sd-faq__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.sd-faq__intro {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.sd-faq__list {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sd-faq__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sd-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 16px;
+}
+
+.sd-faq__question span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sd-faq__question svg {
+  flex-shrink: 0;
+  color: var(--text-light);
+  transition: transform 0.3s ease;
+}
+
+.sd-faq__item--open .sd-faq__question svg {
+  transform: rotate(180deg);
+}
+
+.sd-faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.sd-faq__item--open .sd-faq__answer {
+  max-height: 200px;
+  padding-bottom: 20px;
+}
+
+.sd-faq__answer p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ========== Other Services ========== */
+.sd-other {
+  background: var(--white);
+}
+
+.sd-other__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.sd-other__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid var(--border);
+}
+
+.sd-other__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sd-other__card-img {
+  height: 160px;
+  overflow: hidden;
+}
+
+.sd-other__card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sd-other__card:hover .sd-other__card-img img {
+  transform: scale(1.06);
+}
+
+.sd-other__card-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sd-other__card-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.sd-other__card-body p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.sd-other__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: gap 0.25s ease;
+}
+
+.sd-other__card:hover .sd-other__card-link {
+  gap: 9px;
+}
+
+/* ========== Related Services ========== */
+.sd-related {
+  background: var(--bg);
+}
+
+.sd-related__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.sd-related__card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: block;
+}
+
+.sd-related__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sd-related__img {
+  height: 180px;
+  overflow: hidden;
+}
+
+.sd-related__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sd-related__card:hover .sd-related__img img {
+  transform: scale(1.05);
+}
+
+.sd-related__body {
+  padding: 24px;
+}
+
+.sd-related__body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sd-related__body p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+  .sd-about__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sd-about__image img {
+    height: 280px;
+  }
+
+  .sd-approach__inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sd-other__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sd-hero__inner {
+    padding: 100px 0 32px;
+  }
+
+  .sd-stats__inner {
+    gap: 16px;
+  }
+
+  .sd-stat__value {
+    font-size: 1.4rem;
+  }
+
+  .sd-other__grid {
+    grid-template-columns: 1fr;
+  }
+}
